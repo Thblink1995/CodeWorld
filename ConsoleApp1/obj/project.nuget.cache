@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "vUnVwo13r7s=",
+  "dgSpecHash": "eLuIpl2GwvY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Théobald\\PycharmProjects\\CodeWorld\\ConsoleApp1\\ConsoleApp1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Pawl-Evian\\Documents\\CodeWorld\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pawl-Evian\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\Pawl-Evian\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\Pawl-Evian\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\Pawl-Evian\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }
