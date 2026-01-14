@@ -1,35 +1,35 @@
-import misc as m
-
+# -*- coding: utf-8 -*-
+from misc import *
 
 def start(ng):
-    m.clear()
+    clear()
     print("bienvenue dans code World !")
-    save_key = choixPseudo(ng)  #IMPORTANT ici on rÈcupËre la clÈ de sauvegarde
+    save_key = choixPseudo(ng)  #IMPORTANT ici on r√©cup√®re la cl√© de sauvegarde
     print(
-        "FÈlicitation voyageur du code, apprÍtez-vous ‡ entrer dans Code World !"
+        "F√©licitation voyageur du code, appr√™tez-vous √† entrer dans Code World !"
     )
-    m.clear()
+    clear()
     return save_key
 
 
 
-def choixPseudo(ng) -> str:
-    if ng == "1":  #le joueur n'a jamais jouÈ, on crÈe une save avec son pseudo (scÈnario normal)
+def choixPseudo(ng, dic_save) -> str:
+    if ng == "1":  #le joueur n'a jamais jou√©, on cr√©e une save avec son pseudo (sc√©nario normal)
         rep = ' '
         while rep != "oui":
             perso = input("choisissez le nom de votre personnage : \n")
-            print(f"\nVoulez-vous Ítre : {perso}?")
+            print(f"\nVoulez-vous √™tre : {perso}?")
             rep = input("\noui/non :\n")
-        #crÈation d'une sauvegarde:
+        #cr√©ation d'une sauvegarde:
         dic_save[perso] = {"personnage": perso}
-        m.export_file("save", dic_save)
+        export_file("save", dic_save)
         choixClasse(perso)
         return perso
-    if ng == "2":  #le joueur a dÈj‡ un pseudo et cherche ‡ reprendre sa progression (scÈnario complexe)
-        print("\nQuel Ètait votre pseudo ? \n")
-        #ICI, bug ‡ rÈgler, on est coincÈ dans la boucle si y a pas dÈj‡ de save existante (ligne 144)
+    if ng == "2":  #le joueur a d√©j√† un pseudo et cherche √† reprendre sa progression (sc√©nario complexe)
+        print("\nQuel √©tait votre pseudo ? \n")
+        #ICI, bug √† r√©gler, on est coinc√© dans la boucle si y a pas d√©j√† de save existante (ligne 144)
         liste = list(dic_save.keys())
-        for i in range(len(liste)):  #on affiche une liste de numÈros avec les save dÈj‡ existantes
+        for i in range(len(liste)):  #on affiche une liste de num√©ros avec les save d√©j√† existantes
             print(f"{i+1} : {liste[i]}")
         perso = input("\n pseudo : ")
 
@@ -37,18 +37,18 @@ def choixPseudo(ng) -> str:
             choixPseudo("2")
         else:
             rep = liste[int(perso) - 1]
-        #transfÈrer le joueur directement ‡ la progression associÈ au pseudo
+        #transf√©rer le joueur directement √† la progression associ√© au pseudo
     #-------------------------
     return rep
 
 
-def choixClasse(save_key):
+def choixClasse(save_key, classes_dico):
     """
     debut : save_key est le nom du joueur actuel
-    fin : retourne la classe choisie et verifiÈe du joueur (save_key)
+    fin : retourne la classe choisie et verifi√©e du joueur (save_key)
     """
     print("\nchoisissez votre classe :")
-    for i in classesdico:
+    for i in classes_dico:
         print(i)
     classep = str(input("\nclasse : \n"))
     #si ce que met le joueur n'est ni mage ni guerrier :
@@ -56,32 +56,32 @@ def choixClasse(save_key):
     return None
 
 
-def verifPossibleClasse(classep, save_key):
+def verifPossibleClasse(classep, save_key, classes_key, classes_dico):
     """
-    entrÈe :
-        classep -> str -> la classe choisie ‡ vÈrifier
-        save_key -> str -> clÈ de sauvegarde (nom joueur)
+    entr√©e :
+        classep -> str -> la classe choisie √† v√©rifier
+        save_key -> str -> cl√© de sauvegarde (nom joueur)
     fct :
-        vÈrifie que le joueur a bien choisi une classe existante
+        v√©rifie que le joueur a bien choisi une classe existante
     sortie :
         None
     """
     while classep != classes_key[0] and classep != classes_key[1]:
-        print("\nÈcrire une classe existante.")
-        for i in classesdico:
+        print("\n√©crire une classe existante.")
+        for i in classes_dico:
             print(i)
         classep = str(input("classe : \n"))
     verifClasse(classep, save_key)
     return None
 
-def verifClasse(classep, save_key):
+def verifClasse(classep, save_key, dic_save, classes_dico):
     """
-    EntrÈe : sÈcurise/confirme le choix du joueur avec oui/non\n
+    Entr√©e : s√©curise/confirme le choix du joueur avec oui/non\n
         classedico -> dic -> dictionnaire qui contient toutes les classes et leurs specs
     Fin :
 
     """
-    print(f"\nVoulez-vous Ítre un {classep} ?")
+    print(f"\nVoulez-vous √™tre un {classep} ?")
     rep = str(input("oui / non : \n"))
     if rep != "oui":
         #retourne au choix de la classe
@@ -92,14 +92,40 @@ def verifClasse(classep, save_key):
         dic_save[save_key]["classe"] = classep
         dic_save[save_key]["emplacement"] = "/PC/overworld/batch/auberge_CodeX"
         dic_save[save_key]["progression"] = "0"
-        #dÈfinit l'inventaire du joueur en fonction de sa classe
+        #d√©finit l'inventaire du joueur en fonction de sa classe
         if classep == "mage":
             dic_save[save_key]["inventaire"] = "0,3,4"
         elif classep == "guerrier":
             dic_save[save_key]["inventaire"] = "0,1,2"
-    HP = classesdico[classep]["HP"]
+    HP = classes_dico[classep]["HP"]
     dic_save[save_key]["HP"] = HP
-    m.export_file("save",dic_save)
+    export_file("save",dic_save)
 
 
     return None
+
+
+def ecran_accueil():
+    print(27 * '-+' + "\n{" + 20 * ' ' + "Bienvenue sur" + 19 * " " + "}" +
+          "\n{" + 52 * ' ' + "}" + "\n{" + 21 * ' ' + "Code World" + 21 * " " +
+          "}\n" + 27 * '+-' + "\n")
+    print(19 * ' ' + "1/ \"New Game\"\n" + 19 * ' ' + "2/ \"Continue\"\n" +
+          19 * ' ' + "3/ \"Credits\"\n")
+    rep = str(input("entrez votre choix : "))
+    while rep != "1" and rep != "2" and rep != "3":
+        rep = str(input("entrez votre choix : "))
+    if rep == "1":
+        clear()
+        save_key = start("1")
+    if rep == "2":
+        clear()
+        save_key = start("2")
+    if rep == "3":
+        clear()
+        print("\n" + 28 * ' ' + "Cr√©dits :\n" + "\n" + 13 * ' ' +
+              "directeur projet/d√©veloppeur/sc√©nariste :\n" + 28 * ' ' +
+              "Paul-Evan\n\n" + 15 * ' ' +
+              "sous directeur projet/d√©veloppeur :\n" + 28 * ' ' +
+              "Th√©obald\n")
+        save_key = ecran_accueil()
+    return save_key

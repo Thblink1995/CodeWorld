@@ -1,26 +1,27 @@
-import colorama
+# -*- coding: utf-8 -*-
+
 from colorama import *
 import time
 import misc as m
 dic_cmd = {
     "cd":
-        "vous téléporte où vous voulez !\n   -> utilisation : cd ./ pour descendre, cd /destination pour vous déplacer",
+        "vous tÃ©lÃ©porte oÃ¹ vous voulez !\n   -> utilisation : cd ./ pour descendre, cd /destination pour vous dÃ©placer",
     "pow":
-        "vous montre votre position dans le système",
+        "vous montre votre position dans le systÃ¨me",
     "ls":
-        "vous montre les chemins d'accès devant vous",
+        "vous montre les chemins d'accÃ¨s devant vous",
     "exit":
         "ferme le livre du Terminal",
     "autres":
-        "tkt même pas"
+        "tkt mÃªme pas"
 }
 
 def ls(save_key: str, map: dict, visible: bool, dic_save:dict) -> list:
     """
-    entrée :
-      save_key -> str -> pour connaître l'emplacement du joueur
+    entrÃ©e :
+      save_key -> str -> pour connaÃ®tre l'emplacement du joueur
       map -> dict -> c'est juste la carte
-      visible -> bool -> permet de soit print les données soit de les renvoyer
+      visible -> bool -> permet de soit print les donnÃ©es soit de les renvoyer
     sortie :
       rep -> list -> donne une liste des lieux accessibles par "cd"
     """
@@ -28,8 +29,8 @@ def ls(save_key: str, map: dict, visible: bool, dic_save:dict) -> list:
     liste = access_path.split("/")[1:]
     new_liste = []  #valeur temporaire
     etage = len(liste)
-    for i in range(etage):  #on reprend la même liste mais en
-        #remettant les "/" qui ont été enlevés par le .split()
+    for i in range(etage):  #on reprend la mÃªme liste mais en
+        #remettant les "/" qui ont Ã©tÃ© enlevÃ©s par le .split()
         new_liste.append("/" + liste[i])
     liste = new_liste
     del new_liste
@@ -37,13 +38,13 @@ def ls(save_key: str, map: dict, visible: bool, dic_save:dict) -> list:
     tkt = map
     i = 0
     #if visible :
-    #  print(f"Vous êtes à l'étage {emplacement}")
+    #  print(f"Vous Ãªtes Ã  l'Ã©tage {emplacement}")
     if etage < 4 :
-        for i in range(len(liste)):  #on épluche map pour ne garder que le coeur
+        for i in range(len(liste)):  #on Ã©pluche map pour ne garder que le coeur
             tkt = tkt[liste[i]]
 
         if visible :
-            print("Vous pouvez accéder à :")
+            print("Vous pouvez accÃ©der Ã  :")
             for a in tkt :
                 print(f"{a}")
     else :
@@ -56,9 +57,9 @@ def ls(save_key: str, map: dict, visible: bool, dic_save:dict) -> list:
 
 def cd(save_key: str, argument: str, possibilities: list, dic_save:dict) ->None:
     """
-    entrée :
-      save_key -> str -> clé de la sauvegarde
-      argument -> str -> ce qu'a écrit le joueur derrière "cd"
+    entrÃ©e :
+      save_key -> str -> clÃ© de la sauvegarde
+      argument -> str -> ce qu'a Ã©crit le joueur derriÃ¨re "cd"
       possibilities -> list -> liste des emplacements que le joueur peut atteindre depuis sa position
     sortie :
       pas de sortie
@@ -67,22 +68,22 @@ def cd(save_key: str, argument: str, possibilities: list, dic_save:dict) ->None:
     if argument is None :
         print("il manque un argument")
         return None
-    access_path = dic_save[save_key]["emplacement"]#on récupère l'emplacement actuel de joueur dans sa sauvegarde
+    access_path = dic_save[save_key]["emplacement"]#on rÃ©cupÃ¨re l'emplacement actuel de joueur dans sa sauvegarde
     access_path_list = access_path.split("/")[1:]
     new_access_path_list = []
-    for i in range(len(access_path_list)):  #on reprend la même liste mais en
-        #remettant les "/" qui ont été enlevés par le .split()
+    for i in range(len(access_path_list)):  #on reprend la mÃªme liste mais en
+        #remettant les "/" qui ont Ã©tÃ© enlevÃ©s par le .split()
         new_access_path_list.append("/" + access_path_list[i])
-    #on crée une liste des endroits accessibles depuis son répertoire
+    #on crÃ©e une liste des endroits accessibles depuis son rÃ©pertoire
     #on regarde l'argument et on agit en fonction-------------------
     new_path = ""  #c'est la valeur qui va remplacer "emplacement" dans save_dic
-    #on détermine si l'argument qu'il a entré correspond à un lieu disponible
+    #on dÃ©termine si l'argument qu'il a entrÃ© correspond Ã  un lieu disponible
     if possibilities != None :
         verif_arg = search(possibilities, argument)
     else :
         verif_arg = False
     #----------------------------------------------
-    if verif_arg :#s'il peut se déplacer, on change new_path vers le nouvel endroit
+    if verif_arg :#s'il peut se dÃ©placer, on change new_path vers le nouvel endroit
         new_access_path_list.append(argument)
 
     elif argument == "./":
@@ -92,15 +93,15 @@ def cd(save_key: str, argument: str, possibilities: list, dic_save:dict) ->None:
     #---------------------------------------------------------------
     for i in new_access_path_list:
         new_path += i
-    #print(f"Vous êtes maintenant dans : {new_path}")
-    dic_save[save_key]["emplacement"] = new_path  #on enregistre le déplacement directement dans la save
+    #print(f"Vous Ãªtes maintenant dans : {new_path}")
+    dic_save[save_key]["emplacement"] = new_path  #on enregistre le dÃ©placement directement dans la save
     m.export_file("save", dic_save)
 
 def search(liste, platform) -> bool:
     """
-    entrée:
-      list     -> liste dans laquelle on cherche platform -> peut être une liste OU un dictionnaire;
-      platform -> valeur qui est cherchée dans la liste, peut être de n'importe quel type;
+    entrÃ©e:
+      list     -> liste dans laquelle on cherche platform -> peut Ãªtre une liste OU un dictionnaire;
+      platform -> valeur qui est cherchÃ©e dans la liste, peut Ãªtre de n'importe quel type;
     sortie:
       True/False
     """
@@ -111,9 +112,9 @@ def search(liste, platform) -> bool:
         return False
 
     elif type(liste) == dict :
-        clés = list(liste.keys())
-        for i in range(len(clés)):
-            if clés[i] == platform :
+        clÃ©s = list(liste.keys())
+        for i in range(len(clÃ©s)):
+            if clÃ©s[i] == platform :
                 return True
         return False
 
@@ -125,19 +126,19 @@ def Terminal(save_key, dic_save:dict) -> None:
     print("~Loading~")
     time.sleep(0.5)
     while True:
-        #entrée de la commande
+        #entrÃ©e de la commande
         print(Fore.WHITE + Style.NORMAL)
         print("{")
         entree = input()
-        #séparation de la commande et de l'agument
+        #sÃ©paration de la commande et de l'agument
         decomposition = entree.split(" ")
         cmd = decomposition[0]
         if len(
                 decomposition
-        ) != 1:  #on vérifie que l'argument existe et si oui on le récupère
+        ) != 1:  #on vÃ©rifie que l'argument existe et si oui on le rÃ©cupÃ¨re
             argument = decomposition[1]
         else:
-            argument = None  #il faut quand même déclarer la variable mtn sinon ça pose des problèmes pour la commande cd
+            argument = None  #il faut quand mÃªme dÃ©clarer la variable mtn sinon Ã§a pose des problÃ¨mes pour la commande cd
         del decomposition, entree
         #-----------------------------------------
         print("}\n")
@@ -156,29 +157,29 @@ def Terminal(save_key, dic_save:dict) -> None:
 
         elif cmd == "code_cadeau":
             print(
-                "##### TA MERE ESPECE DE ###### T'AS VRAIMENT CRU QUE CA MARCHAIT COMME CA ON N'EST PAS ### NON PLUS (cette remarque n'a pas été approuvée par le directeur)\n"
+                "##### TA MERE ESPECE DE ###### T'AS VRAIMENT CRU QUE CA MARCHAIT COMME CA ON N'EST PAS ### NON PLUS (cette remarque n'a pas Ã©tÃ© approuvÃ©e par le directeur)\n"
             )
             time.sleep(4)
             print(
-                "PUTAIIIIIIIIIIN C'EST VRAIMENT TOUS DES ####### CES JOUEURS\n(de Théobald, le directeur n'a toujours pas approuvé cette remarque)"
+                "PUTAIIIIIIIIIIN C'EST VRAIMENT TOUS DES ####### CES JOUEURS\n(de ThÃ©obald, le directeur n'a toujours pas approuvÃ© cette remarque)"
             )
 
-        elif cmd == "pow":  #afficher l'emplacement sur la carte en mode chemin d'accès linux
+        elif cmd == "pow":  #afficher l'emplacement sur la carte en mode chemin d'accÃ¨s linux
             access_path = dic_save[save_key]["emplacement"]
-            print(f"répertoire : {access_path}")
+            print(f"rÃ©pertoire : {access_path}")
             list_path = access_path.split("/")
             emplacement = list_path[len(list_path) - 1]
-            print(f"\nvous êtes ici : /{emplacement}")
+            print(f"\nvous Ãªtes ici : /{emplacement}")
 
         elif cmd == "ls":  #affiche tous les lieux dispo
             ls(save_key, map, True)
 
         elif cmd == "autres":
             print(
-                "Bien essayé petit ####### de cheater. Désolé il est tard j'ai tendance à m'énerver assez vite. (de Théobald, toujours pas approuvé par le directeur)"
+                "Bien essayÃ© petit ####### de cheater. DÃ©solÃ© il est tard j'ai tendance Ã  m'Ã©nerver assez vite. (de ThÃ©obald, toujours pas approuvÃ© par le directeur)"
             )
 
-        elif cmd == "cd":  #se tp à un autre lieu
+        elif cmd == "cd":  #se tp Ã  un autre lieu
             possibilities = ls(save_key, map, False)
             cd(save_key, argument, possibilities)
 

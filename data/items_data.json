@@ -1,0 +1,44 @@
+[
+    {
+        "﻿id": "0",
+        "nom": "frèle_main",
+        "degats": "1",
+        "def": "0",
+        "type": "arme"
+    },
+    {
+        "﻿id": "1",
+        "nom": "coutelas",
+        "degats": "2",
+        "def": "0",
+        "type": "arme"
+    },
+    {
+        "﻿id": "2",
+        "nom": "tunique_de_cuir",
+        "degats": "0",
+        "def": "4",
+        "type": "def"
+    },
+    {
+        "﻿id": "3",
+        "nom": "baguette_magique",
+        "degats": "4",
+        "def": "0",
+        "type": "arme"
+    },
+    {
+        "﻿id": "4",
+        "nom": "robe_déchirée",
+        "degats": "0",
+        "def": "1",
+        "type": "def"
+    },
+    {
+        "﻿id": "5",
+        "nom": "épée_surcheat_du_berserker_de_la_mort_qui_tue_sa_mère",
+        "degats": "99",
+        "def": "0",
+        "type": "arme.csv"
+    }
+]

@@ -1,7 +1,8 @@
-import misc as m
+from misc import *
 import fight
 import inventaire
 import time
+
 #auberge--------------------------------------------#
 def auberge_1():
     a = "bien et vous ?"
@@ -16,7 +17,7 @@ def auberge_1():
 
 
 def auberge_hub(save_key, classep, dic_save):
-    m.clear()
+    clear()
     print(20 * ' ' + "Bienvenue à l'auberge CodeX !")
 
     def aub1():
@@ -25,7 +26,7 @@ def auberge_hub(save_key, classep, dic_save):
                 "Que faire ? \nchoix : \n fouille\n parler a l'aubergiste\n prendre une biere\n parler a un client\n quitter l'auberge\n"
             ))
         if rep != "fouille" and rep != "parler a l'aubergiste" and rep != "prendre une biere" and rep != "parler a un client" and rep != "quitter l'auberge":
-            m.clear()
+            clear()
             auberge_hub()
         elif rep == "fouille":
             inventaire.print(dic_save[save_key]["classe"], save_key)
@@ -35,16 +36,16 @@ def auberge_hub(save_key, classep, dic_save):
             aubergiste()
             aub1()
         elif rep == "prendre une biere":
-            m.clear()
+            clear()
             print("*burp*\n")
             input()
-            m.clear()
+            clear()
             aub1()
         elif rep == "parler a un client":
-            m.replique_pnj()
+            replique_pnj()
             aub1()
         elif rep == "quitter l'auberge":
-            m.clear()
+            clear()
             auberge_foret(save_key, classep)
         return
 
@@ -60,7 +61,7 @@ def aubergiste():  #quand le joueur lui parle librement
     if rep != "rien" and rep != "rappelez moi la quete s'il vous plait":
         aubergiste()
     elif rep == "rien":
-        m.replique_pnj()
+        replique_pnj()
         return ()
     elif rep == "rappelez moi la quete s'il vous plait":
         print(
@@ -69,13 +70,13 @@ def aubergiste():  #quand le joueur lui parle librement
 
 
 def foret_hub_tuto(save_key, classep):
-    m.clear()
+    clear()
     mouv = str(
         input(
             "vous voilà dans la forêt, les sons se mélangent mais le bruit de votre clavier reste constamment présent tandis que vous avancez :\n\n avancer\n\n"
         ))
     if mouv != "avancer":
-        m.clear()
+        clear()
         mv = "mouvement : "
         mouv = str(input("vous voilà dans la forêt, les sons se mélangent mais le bruit de votre clavier reste constamment présent tandis que vous avancez :\n avancer\n{0}".format(mv)))
     else:
@@ -114,7 +115,7 @@ def quete1():
             pass
     else:
         print("Oh ! Merci beaucoup voyageur !")
-        m.clear()
+        clear()
 
 def fichierq1(save_key, dic_save):
     print(20 * ' ' + "*Vous avez accepté la quête \"fichier corrompu\"*\n")

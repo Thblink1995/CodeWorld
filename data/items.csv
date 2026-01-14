@@ -1,7 +1,0 @@
-﻿id nom degats def type
-0 frèle_main 1 0 arme
-1 coutelas 2 0 arme
-2 tunique_de_cuir 0 4 def
-3 baguette_magique 4 0 arme
-4 robe_déchirée 0 1 def
-5 épée_surcheat_du_berserker_de_la_mort_qui_tue_sa_mère 99 0 arme.csv

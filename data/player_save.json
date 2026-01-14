@@ -1,0 +1,15 @@
+{
+    "exemple": {
+        "arme": "épée",
+        "classe": "guerrier",
+        "progression": {
+            "forest": "1-1",
+            "auberge": "2"
+        },
+        "inventaire": [
+            "épée-1",
+            "bouclier-1potion-1"
+        ],
+        "location": "/PC/overworld/batch/auberge_CodeX"
+    }
+}

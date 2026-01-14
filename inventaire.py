@@ -1,10 +1,10 @@
-import misc as m
+from misc import *
 
 def print(save_key, classep, dic_save, dic_item):
     """
     imprime l'inventaire actuel dans la console
     """
-    list_id_item = m.separateur(",", dic_save[save_key]["inventaire"])
+    list_id_item = separateur(",", dic_save[save_key]["inventaire"])
     it = []
     for i in range(len(list_id_item)):
         it.append(dic_item[list_id_item[i]]["nom"])

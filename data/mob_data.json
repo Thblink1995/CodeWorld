@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "nom": "ptit_virus",
+        "atq": "5",
+        "def": "5",
+        "HP": "50",
+        "doc": "Simple_rapide_efficace"
+    },
+    {
+        "id": "2",
+        "nom": "moy_virus",
+        "atq": "8",
+        "def": "8",
+        "HP": "50",
+        "doc": "De_jeunes_gougnafiers_peu_fréquentable"
+    },
+    {
+        "id": "3",
+        "nom": "Boss_Virus",
+        "atq": "10",
+        "def": "10",
+        "HP": "75",
+        "doc": "Menaçant_mais_peu_dangereux"
+    }
+]
