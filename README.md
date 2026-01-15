@@ -1,4 +1,4 @@
 # CodeWorld
 
-Un projet qui vise pour l'instant a faire un rpg
-dans la console directement.
+Projet de rpg textuel dans une émulation de terminal.
+
