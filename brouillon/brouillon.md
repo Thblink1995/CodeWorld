@@ -1,50 +1,24 @@
-﻿"classes : guerrier / mage
+﻿
+# tuto
 
-guerrier : {"force":10, "defense":20, "HP":100, "objet":["coutelas", "tunique de cuir"]}
-
-mage : {"force":5, "defense":40, "HP":80, "objet":["bâtonnet magique", "robe déchirée"]}
-
-
-#tuto{
-  debut à l'auberge
-  l'aubergiste lui parle d'une quete dans fichier>foret
-  une fois dans la foret, le joueur se fait agresser par un ptit virus :
-    début du combat (tuto combat)
-    fin combat
-  le joueur avance dans la foret/rentre dans une faille du DeepW (dimension parallele de virus)
-  il rencontre un gros virus "Virus_lvl15" imbattable
-    début du combat
-  Uwu_kikoulol_uwU vient l'aider et descend l'ennemi à :
-  10 HP si le joueur est guerrier
-  5 HP si le joueur est mage
-  -> dans tts les cas le joueur ne peut que le finir en 1 coup
-  le virus loot un "infected byte"
+debut à l'auberge
+l'aubergiste lui parle d'une quete dans fichier>foret
+une fois dans la foret, le joueur se fait agresser par un ptit virus :
+début du combat (tuto combat)
+fin combat
+le joueur avance dans la foret/rentre dans une faille du DeepW (dimension parallele de virus)
+il rencontre un gros virus "Virus_lvl15" imbattable
+début du combat
+Uwu_kikoulol_uwU vient l'aider et descend l'ennemi à :
+10 HP si le joueur est guerrier
+5 HP si le joueur est mage
+-> dans tts les cas le joueur ne peut que le finir en 1 coup
+le virus loot un "infected byte"
 Uwu_kikoulol_uwU lui apprend la commande magique de Terminal pour TP : cd ./auberge
 Kikoulol lui indique la problématique (Ddos veut obtenir la commande pour transformer les gens en arme pour ses attaques Ddos et ainsi etre plus puissant)
-  le joueur est TP à l'entrée de la foret devant l'auberge et il y entre
-  il donne l' "infected byte" à l'aubergiste qui lui donne sa 1ère récompense :
-  une nouvelle arme un tout ptit peu plus puissante que la basique.
-
-
-}
-
-
-*debut vrai jeu (oe enfin on se calme)*
-
-scénario{
-
-l'auberge est en amont du village et il doit le rejoindre après le tuto
-l'aubergiste lui indique après la quete tuto
- -> le joueur va au village à la fin du tuto, il se stuff un peu, il va parler aux pnj pour découvrir/comprendre le monde
-}
-
-
-
-
-
-
-
-
+le joueur est TP à l'entrée de la foret devant l'auberge et il y entre
+il donne l' "infected byte" à l'aubergiste qui lui donne sa 1ère récompense :
+une nouvelle arme un tout ptit peu plus puissante que la basique.
 
 #cahier des charges----------------------------------------------------------------
 

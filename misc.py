@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import csv
+import io
 import os
 import random
 import json
+import sys
 
 #----------données globales :
 player_save_filepath = "player_save.json"
@@ -11,6 +12,8 @@ mob_data_filepath = "mob_data.json"
 items_data_filepath = "items_data.json"
 #----------------------------
 
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def clear():
     os.system('clear')
@@ -34,8 +37,12 @@ def replique_pnj():
         repliques = list(replique)
         print("\n" + random.choice(repliques))
 
+def no_space_string(string:str):
+    return ' ' not in string
 
-data = {
+
+
+data_exemple = {
     "exemple": {
         "arme":"épée",
         "classe":"guerrier",

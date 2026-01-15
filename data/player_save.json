@@ -1,15 +1,11 @@
 {
-    "exemple": {
-        "arme": "épée",
-        "classe": "guerrier",
-        "progression": {
-            "forest": "1-1",
-            "auberge": "2"
-        },
-        "inventaire": [
-            "épée-1",
-            "bouclier-1potion-1"
+    "Debug§": {
+        "classe": "AllPowerfulGod",
+        "max_health": 99999,
+        "current_health": 99999,
+        "inventory": [
+            1
         ],
-        "location": "/PC/overworld/batch/auberge_CodeX"
+        "location": "/DevRoom/"
     }
 }

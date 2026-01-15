@@ -1,0 +1,19 @@
+{
+  "characters": {
+    "SYSTEM": {"text_color": "bold black on white", "prefix": "SYS > ", "prefix_color": "bold black on white"},
+    "KRONOS": {"text_color": "", "prefix": "KRONOS@ROOT:~$ ", "prefix_color": "bold yellow"},
+    "IO": {"text_color": "", "prefix": "IO_GHOST >> ", "prefix_color": "bold magenta"},
+    "ERROR": {"text_color": "bold red", "prefix": "[!] ERROR: ", "prefix_color": "bold red"}
+  },
+  "sequences": {
+    "init_sequence": [
+      {"speaker": "SYSTEM", "text": "Chargement des protocoles neuronaux..."},
+      {"speaker": "KRONOS", "text": "Tu m'entends ? Ta signature binaire est instable."},
+      {"speaker": "IO", "text": "Laisse-le tranquille, Kronos. Il vient de naître."}
+    ],
+    "welcome_logic": [
+      {"speaker": "SYSTEM", "text": "Identification réussie. Bienvenue, {s.player_name}."},
+      {"speaker": "KRONOS", "text": "Tes sous-systèmes sont à {s.health}%. C'est peu pour une entité de classe {s.player_class}."}
+    ]
+  }
+}
