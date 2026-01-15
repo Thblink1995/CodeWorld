@@ -1,11 +1,25 @@
 {
     "Debug§": {
-        "classe": "AllPowerfulGod",
+        "class": "AllPowerfulGod",
         "max_health": 99999,
         "current_health": 99999,
         "inventory": [
             1
         ],
         "location": "/DevRoom/"
+    },
+    "new_player": {
+        "class": "",
+        "max_health": 10,
+        "current_health": 10,
+        "inventory": [],
+        "location": ""
+    },
+    "": {
+        "classe": "",
+        "max_health": 10,
+        "current_health": 10,
+        "inventory": [],
+        "location": ""
     }
 }

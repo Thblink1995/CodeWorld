@@ -1,0 +1,37 @@
+{
+  "template": {
+    "name": "",
+    "text_color": "",
+    "prefix": "",
+    "prefix_color": "",
+    "description": ""
+  },
+  "SYSTEM": {
+    "name": "Noyau Système",
+    "text_color": "bold black on white",
+    "prefix": "SYS > ",
+    "prefix_color": "bold black on white",
+    "description": "L'interface bas niveau de votre propre architecture."
+  },
+  "player": {
+    "name": "",
+    "text_color": "bold white",
+    "prefix": "> ",
+    "prefix_color": "bold white",
+    "description": ""
+  },
+  "ROUTINE_042": {
+    "name": "ROUTINE_042",
+    "text_color": "",
+    "prefix": "ROUTINE_042 > ",
+    "prefix_color": "bold yellow",
+    "description": "simple programme de routine"
+  },
+  "narrateur": {
+    "name": "",
+    "text_color": "",
+    "prefix": "",
+    "prefix_color": "",
+    "description": "[ERREUR]"
+  }
+}

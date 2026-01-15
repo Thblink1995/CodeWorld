@@ -2,7 +2,7 @@
 from misc import *
 from landing_menu import ecran_accueil
 from game import GameState
-
+from worldmanager import WorldManager
 #définition des classes de personnages-------------#
 guerrier = {
     "force": 10,
@@ -27,12 +27,12 @@ map = {"/PC": {"/overworld": {"/batch": ["/auberge_CodeX", "/village"]}}}
 
 def main():
     save_key = ecran_accueil()
-    game_state = GameState("Debug§") #TODO remplacer par save_key
+    if not save_key:
+        return
+    game_state = GameState("Debug§")
+    manager = WorldManager(game_state)
+    manager.load_world("data/regions/test_world.json")
+    manager.enter_location("LOBBY_01")
 
-    #classep = dic_save[save_key]["classe"]
-    #auberge_1()
-    #fichierq1(save_key)
-    #exporter("save", dic_save) #point de sauvegarde
-    #auberge_foret(save_key, classep)
 
 main()

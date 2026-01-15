@@ -1,0 +1,13 @@
+{
+  "LOBBY_01": {
+    "name": "Point d'Accès Principal",
+    "description": "Un carrefour de données encombré de requêtes fantômes.",
+    "on_enter": [
+      { "type": "dialogue", "diag_path": "data/dialogues/intro.json","sequence_id": "intro_msg" },
+      { "type": "status_effect", "stat": "current_health", "value": -5 }
+    ],
+    "exits": {
+      "nord": "SERVER_ROOM"
+    }
+  }
+}

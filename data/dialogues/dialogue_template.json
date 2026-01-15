@@ -1,0 +1,8 @@
+{
+  "welcome_logic": [
+    {"speaker": "SYSTEM", "text": "Identification réussie. Bienvenue, {s.player_name}."}
+  ],
+  "": [
+    {"speaker": "", "text": ""}
+  ]
+}

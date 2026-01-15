@@ -5,57 +5,54 @@ import random
 import json
 import sys
 
-#----------données globales :
-player_save_filepath = "player_save.json"
-repliques_pnj_filepath = "repliques_pnj.json"
-mob_data_filepath = "mob_data.json"
-items_data_filepath = "items_data.json"
-#----------------------------
+from rich.prompt import Prompt
 
-if sys.stdout.encoding != 'utf-8':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+#----------données globales :
+player_save_filepath = "data/player_save.json"
+repliques_pnj_filepath = "data/dialogues/repliques_pnj.json"
+mob_data_filepath = "data/mob_data.json"
+items_data_filepath = "data/items_data.json"
+characters_data_filepath = "data/characters_data.json"
+#----------------------------
 
 def clear():
     os.system('clear')
 
 def import_file(filename: str) -> dict:
-    with open("data/" + filename, "r", encoding="utf-8") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         donnees_chargees = json.load(f)
     return donnees_chargees
 
 def export_file(filename: str, data) -> None:
-    with open("data/" + filename, "w", encoding="utf-8") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-def separateur(delimiteur: str, valeur: str) -> list:
-    rep = valeur.split(delimiteur)
-    return rep
+def parse_script(txt_path):
+    dialogues = {}
+    current_key = None
 
-def replique_pnj():
-    with open("data/replique.csv", mode='r', newline='') as replique:
-        repliques = list(replique)
-        print("\n" + random.choice(repliques))
+    base_path = os.path.splitext(txt_path)[0]  # Enlève l'extension .txt
+    json_path = base_path + ".json"
 
-def no_space_string(string:str):
-    return ' ' not in string
+    with open(txt_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"): continue  # Ignore vide et commentaires
 
+            if line.startswith("=="):
+                current_key = line.replace("==", "").strip()
+                dialogues[current_key] = []
+            elif "|" in line and current_key:
+                speaker, text = line.split("|", 1)
+                dialogues[current_key].append({
+                    "speaker": speaker.strip(),
+                    "text": text.strip()
+                })
 
+    export_file(json_path, dialogues)
 
-data_exemple = {
-    "exemple": {
-        "arme":"épée",
-        "classe":"guerrier",
-        "progression": {
-            "forest":"1-1",
-            "auberge":"2"
-        },
-        "inventaire":[
-            "épée-1",
-            "bouclier-1"
-            "potion-1"
-        ],
-        "location":"/PC/overworld/batch/auberge_CodeX"
-    }
-}
-#export_file(player_save_file, data)
+class NoColonPrompt(Prompt):
+    prompt_suffix = " "
+
+#parse_script("data/dialogues/intro.txt")

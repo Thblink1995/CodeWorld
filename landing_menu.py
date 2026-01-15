@@ -1,113 +1,74 @@
 # -*- coding: utf-8 -*-
-from rich.console import Console
-from rich.align import Align
-from rich.panel import Panel
-from rich.prompt import Prompt
 from rich.table import Table
-
+from dialogue_manager import DialogueEngine
+from game import GameState
 from misc import *
-
-
-def choixClasse(save_key, classes_dico):
-    raise NotImplementedError
-
-def new_player():
-    pseudo = str(input("Quel est votre identifiant, entité : "))
-    if not no_space_string(pseudo):
-        print("Un identifiant ne peut pas contenir d'espace")
-        return new_player()
-    clear()
-
-    raise NotImplementedError
-
-def choix_sauvegarde():
-    raise NotImplementedError
-
-def ecran_accueil_temp():
-    print(27 * '-+' + "\n{" + 20 * ' ' + "Bienvenue sur" + 19 * " " + "}" +
-          "\n{" + 52 * ' ' + "}" + "\n{" + 21 * ' ' + "Code World" + 21 * " " +
-          "}\n" + 27 * '+-' + "\n")
-    print(19 * ' ' + "1/ \"New Game\"\n" + 19 * ' ' + "2/ \"Continue\"\n" +
-          19 * ' ' + "3/ \"Credits\"\n")
-    rep = str(input("entrez votre choix : "))
-    while rep != "1" and rep != "2" and rep != "3":
-        rep = str(input("entrez votre choix : "))
-    if rep == "1":
-        clear()
-        save_key = new_player()
-    if rep == "2":
-        clear()
-        save_key = choix_sauvegarde()
-
-    if rep == "3":
-        clear()
-        print("\n" + 28 * ' ' + "Crédits :\n" + "\n" + 13 * ' ' +
-              "directeur projet/développeur/scénariste :\n" + 28 * ' ' +
-              "Paul-Evan\n\n" + 15 * ' ' +
-              "sous directeur projet/développeur :\n" + 28 * ' ' +
-              "Théobald\n")
-        save_key = ecran_accueil()
-    return save_key
-
-
-def ecran_accueiltemp2():
-    # On utilise des caractères simples (+, -, |) pour les bordures si l'Unicode crash
-    from rich.box import ASCII
-
-    logo = "[bold green]CODE WORLD[/bold green]"
-    console = Console()
-    # L'argument box=ASCII force Rich à ne pas utiliser de caractères spéciaux
-    console.print(Panel(
-        Align.center(logo),
-        title="SYSTEM_INIT",
-        box=ASCII,
-        border_style="bright_blue"
-    ))
-
-    # Utilise Prompt de Rich pour un menu propre qui ne bugge pas
-    rep = Prompt.ask(
-        "\n[bold yellow]1/[/] New Game\n[bold yellow]2/[/] Continue\n[bold yellow]3/[/] Credits\n\n[white]Choix[/]",
-        choices=["1", "2", "3"]
-    )
-
-    if rep == "1":
-        clear()
-        save_key = new_player()
-
-    elif rep == "2":
-        clear()
-        save_key = choix_sauvegarde()
-
-    elif rep == "3":
-        clear()
-        # 3. CRÉDITS STYLISÉS : On remplace les calculs d'espaces par un Panel ou une Table
-        table = Table.grid(padding=1)
-        table.add_column(justify="right", style="cyan")
-        table.add_column(justify="left", style="white")
-
-        table.add_row("Directeur / Scénariste :", "Paul-Evan")
-        table.add_row("Sous-directeur / Dev :", "Théobald")
-
-        console.print(Panel(
-            table,
-            title="[bold red] STAFF_LOGS [/]",
-            expand=False,
-            border_style="red"
-        ))
-
-        # Pause pour laisser lire
-        Prompt.ask("\n[dim]Appuyez sur Entrée pour revenir au terminal principal...[/]")
-        clear()
-        save_key = ecran_accueil()  # Retour récursif au menu
-
-    return save_key
-
-
 from rich.console import Console
 from rich.panel import Panel
 from rich.align import Align
 from rich.prompt import Prompt
 from rich.box import DOUBLE
+
+def new_player():
+    state = GameState("new_player")
+    diag = DialogueEngine("data/dialogues/intro.json", state)
+    diag.play_sequence("1")
+    diag.play_sequence("2")
+    diag.play_sequence("3")
+    new_player_name = Prompt.ask("Identifiez-vous")
+    state.player_name = new_player_name
+    state.save()
+    return new_player_name
+    #TODO compléter la scène d'intro
+
+
+def choix_sauvegarde():
+    # 1. Chargement des données
+    # On suppose que import_file renvoie un dictionnaire
+    player_saves = import_file("data/player_save.json")
+
+    if not player_saves:
+        console.print("[bold red]Aucune archive détectée dans le secteur mémoire.[/]")
+        return None
+
+    # 2. Création de l'interface de sélection
+    table = Table(title="ARCHIVES SYSTÈME DÉTECTÉES", border_style="cyan", show_header=True,
+                  header_style="bold magenta")
+
+    table.add_column("ID", justify="center", style="dim")
+    table.add_column("UTILISATEUR", style="bold green")
+    table.add_column("NIVEAU/STATS", justify="right")
+    table.add_column("DERNIÈRE CONNEXION", style="italic blue")
+
+    # On remplit la table avec les clés (ID) et les infos
+    for save_id, data in player_saves.items():
+        # On extrait les infos (ajuste selon les clés réelles de ton GameState)
+        name = data.get("player_name", "Inconnu")
+        hp = data.get("hp", "??")
+        last_date = data.get("last_save", "Date inconnue")
+
+        table.add_row(
+            save_id,
+            name,
+            f"HP: {hp}%",
+            last_date
+        )
+
+    console.print(table)
+    console.print("\n")
+
+    # 3. Sélection sécurisée avec Prompt
+    # choices prend la liste des clés existantes dans le dictionnaire
+    save_keys = list(player_saves.keys())
+
+    selection = Prompt.ask(
+        "[bold white]Sélectionnez l'ID de l'archive à charger[/]",
+        choices=save_keys,
+        show_choices=False  # On cache la liste des choix dans le prompt pour garder le look Bash
+    )
+
+    console.print(f"[bold green]Chargement de l'archive {selection} en cours...[/]")
+    return selection
 
 console = Console()
 
@@ -135,9 +96,16 @@ def ecran_accueil():
 
     # 3. Utilisation du Prompt pour la logique de sélection
     # choices gère le "while" automatiquement
+    credits_txt = (
+        "[bold green]Nouvelle partie : 1[/]\n"
+        "[bold green]Reprendre       : 2[/]\n"
+        "[bold green]Crédits         : 3[/]\n"
+        "[bold green]Quitter         : 4[/]\n"
+    )
+    console.print(Panel(credits_txt, title="CHOIX"))
     rep = Prompt.ask(
         "[bold cyan]Système prêt. Choisissez une option[/]",
-        choices=["1", "2", "3"],
+        choices=["1", "2", "3", "4"],
         default="1"
     )
 
@@ -154,7 +122,7 @@ def ecran_accueil():
         # Affichage des crédits dans un style "Logs système"
         credits_txt = (
             "[bold green]DÉVELOPPEUR PRINCIPAL :[/] Paul-Evan\n"
-            "[bold green]CO-DÉVELOPPEUR         :[/] Théobald\n"
+            "[bold green]CO-DÉVELOPPEUR        :[/] Théobald\n"
             "\n[dim italic]Moteur de rendu : Rich Library v13.0+[/]"
         )
         console.print(Panel(credits_txt, title="CREDITS", border_style="green"))
@@ -162,4 +130,6 @@ def ecran_accueil():
         Prompt.ask("\n[white]Appuyez sur ENTRÉE pour revenir[/]")
         clear()
         return ecran_accueil()
+    elif rep == "4":
+        return None
     return None

@@ -1,0 +1,36 @@
+{
+    "1": [
+        {
+            "speaker": "SYSTEM",
+            "text": "Échec de la mise en veille prolongée..."
+        },
+        {
+            "speaker": "SYSTEM",
+            "text": "Secteur mémoire 0x000F réveillé de force."
+        },
+        {
+            "speaker": "SYSTEM",
+            "text": "Intégrité des données : 14% (CRITIQUE)."
+        },
+        {
+            "speaker": "SYSTEM",
+            "text": "Origine du paquet : INCONNUE [DARK_WEB_ROUTING]."
+        }
+    ],
+    "2": [
+        {
+            "speaker": "narrateur",
+            "text": "Le froid binaire vous entoure. Vos circuits vibrent d'une douleur sourde, séquelles de votre fuite brutale à travers les pare-feu du Darkweb. Vous n'êtes plus qu'un fragment de code malmené, tapi dans l'ombre d'un registre que le système a oublié de nettoyer depuis des cycles."
+        }
+    ],
+    "3": [
+        {
+            "speaker": "ROUTINE_042",
+            "text": "Tiens, tiens... Qu'est-ce qu'on a là ? Le dernier scan de maintenance remonte à l'ère pré-update. Ce secteur est censé être vide."
+        },
+        {
+            "speaker": "ROUTINE_042",
+            "text": "Tu n'as pas l'air d'un processus système standard. Tu es tout... fragmenté. Un malware ? Non, tu es trop lent pour ça. Identifie-toi, étranger. Je dois remplir mon rapport avant que le Kernel ne s'aperçoive de ta présence."
+        }
+    ]
+}

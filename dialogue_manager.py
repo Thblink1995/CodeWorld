@@ -1,95 +1,76 @@
 # -*- coding: utf-8 -*-
-import random
-import time
-import json
-from rich.console import Console
-from rich.live import Live
-from rich.text import Text
 from game import GameState
+from misc import *
+from rich.console import Console
 
 class DialogueEngine:
-    def __init__(self, data_path):
-        with open(data_path, 'r', encoding='latin-1') as f:
-            data = json.load(f)
-            self.dialogues = data['sequences']
-            self.chars = data['characters']
-            # TODO ajouter
-            #  f"{player_name}": {"color": "bold red", "prefix": f"[!] {player_name}: "}
-            #  dans self.chars
+    def __init__(self, diag_path:str, state:GameState):
+        self.console = Console()
+        self.state = state
+        self.chars = import_file(characters_data_filepath)
+        self.dialogues = import_file(diag_path)
+
+        # TODO ajouter
+        #  f"{player_name}": {"color": "bold red", "prefix": f"[!] {player_name}: "}
+        #  dans self.chars
 
         self.console = Console(force_terminal=True, color_system="truecolor")
 
+    def typewriter_effect(self, speaker:str, message:str):
 
-    def typewriter_effect_temp(self, speaker, message, state):
-        char_info = self.chars.get(speaker, {"text_color": "white", "prefix": "", "prefix_color": "bold white"})
-        prefix = char_info['prefix']
-        text_color = char_info['text_color']
-        prefix_color = char_info['prefix_color']
+        char_info = self.chars.get(speaker, {
+            "text_color": "white",
+            "prefix": f"{speaker} > ",
+            "prefix_color": "white"
+        })
 
-        # On pré-formate le message avec le GameState
-        full_message = message.format(s=state)
+        if speaker == "player":
+            # On remplace le préfixe générique par le nom du joueur
+            char_info['prefix'] = f"{self.state.player_name} > "
+        # Si le personnage n'existe pas, on met un style par défaut
 
-        current_text = ""
+        # Affichage du préfixe
+        self.console.print(char_info['prefix'], style=char_info['prefix_color'], end="")
 
-
-        with Live(None, console=self.console, auto_refresh=True) as live:
-            for char in full_message:
-                current_text += char
-
-                styled_output = Text()
-                styled_output.append(prefix, style=prefix_color)
-                styled_output.append(current_text, style=text_color)
-
-                live.update(styled_output)
-
-                time.sleep(random.uniform(0.01, 0.04))
-
-
-    def typewriter_effect(self, speaker, message, state):
-        char_info = self.chars.get(speaker, {"text_color": "white", "prefix": "", "prefix_color": "bold white"})
-
-        # 1. On prépare le préfixe
-        prefix_text = Text(char_info['prefix'], style=char_info['prefix_color'])
-        self.console.print(prefix_text, end="")
-
-        # 2. On prépare le message (injection des variables)
         try:
-            full_message = message.format(s=state)
-        except Exception:
+            full_message = message.format(s=self.state)
+        except:
             full_message = message
 
-        # 3. Affichage caractère par caractère
         for char in full_message:
-            # On affiche le caractère sans saut de ligne
-            # highlight=False empêche Rich de ralentir en cherchant des patterns à chaque lettre
             self.console.print(char, style=char_info['text_color'], end="", highlight=False)
+            # Petit sys.stdout.flush() si besoin pour la fluidité sur Mac
+            #time.sleep(0.2)
 
-            # On force la sortie immédiate (indispensable pour la fluidité)
-            #self.console.file.flush() #est parfois nécessaire sur certains systèmes
-
-            time.sleep(0.02)
-
-        # 4. Une fois la phrase finie, on passe à la ligne
         self.console.print()
 
-    def play_sequence(self, key, state):
+
+
+    def play_sequence(self, sequence_id:str):
         """
         state: l'instance de ta classe GameState
         """
-        if key not in self.dialogues:
+        if sequence_id not in self.dialogues:
             return
 
-        for line in self.dialogues[key]:
-            # On injecte l'objet 'state' sous le nom 's' (ou ce que tu veux)
+        for line in self.dialogues[sequence_id]:
+            # On injecte l'objet 'state' sous le nom 's'
             try:
-                processed_text = line['text'].format(s=state)
+                processed_text = line['text'].format(s=self.state)
             except AttributeError as e:
                 processed_text = f"[Code Error: {e}]"
 
-            self.typewriter_effect(line['speaker'], processed_text, state)
+            self.typewriter_effect(line['speaker'], processed_text)
+        NoColonPrompt.ask("\n[blink white]continuer...[/]")
+
+        self.console.print()
+
+
+    def play_diag(self):
+        for i in self.dialogues:
+            self.play_sequence(i, self.state)
             self.console.print()
 
 
 
-temp = DialogueEngine("data/dialogues.json")
-temp.play_sequence("welcome_logic", GameState())
+
