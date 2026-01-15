@@ -1,8 +1,8 @@
 {
     "Debug§": {
-        "class": "AllPowerfulGod",
+        "classe": "AllPowerfulGod",
         "max_health": 99999,
-        "current_health": 99999,
+        "current_health": 99994,
         "inventory": [
             1
         ],
@@ -16,6 +16,13 @@
         "location": ""
     },
     "Théobald": {
+        "classe": "",
+        "max_health": 10,
+        "current_health": 10,
+        "inventory": [],
+        "location": ""
+    },
+    "tktmemepas": {
         "classe": "",
         "max_health": 10,
         "current_health": 10,

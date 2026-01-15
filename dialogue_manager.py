@@ -39,7 +39,7 @@ class DialogueEngine:
             # Petit sys.stdout.flush() si besoin pour la fluidité sur Mac
 
             #TODO résoudre le problème de fluidité
-            time.sleep(0.02)
+            time.sleep(random.choice([0.02, 0.03, 0.04]))
 
         self.console.print()
 
@@ -60,7 +60,9 @@ class DialogueEngine:
                 processed_text = f"[Code Error: {e}]"
 
             self.typewriter_effect(line['speaker'], processed_text)
-            time.sleep(delay_time)
+
+            time.sleep(random.choice([delay_time, delay_time+0.1, delay_time-0.1]))
+
         NoColonPrompt.ask("\n[blink white]continuer...[/]")
 
         self.console.print()

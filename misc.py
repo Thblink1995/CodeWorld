@@ -7,6 +7,8 @@ import sys
 
 from rich.prompt import Prompt
 
+version = "v0.0.1-alpha"
+
 #----------données globales :
 player_save_filepath = "data/player_save.json"
 repliques_pnj_filepath = "data/dialogues/repliques_pnj.json"

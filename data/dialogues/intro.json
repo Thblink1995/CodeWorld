@@ -20,7 +20,7 @@
     "2": [
         {
             "speaker": "narrateur",
-            "text": "Vous n'êtes plus qu'un fragment de code malmené, tapi dans l'ombre d'un registre que le système a oublié de nettoyer depuis des cycles."
+            "text": "Le froid binaire vous entoure. Vos circuits vibrent d'une douleur sourde, séquelles de votre fuite brutale à travers les pare-feu du Darkweb."
         },
         {
             "speaker": "narrateur",
@@ -35,7 +35,7 @@
         {
             "speaker": "ROUTINE_042",
             "text": "Tu n'as pas l'air d'un processus système standard. Tu es tout... fragmenté. Un malware ? Non, tu es trop lent pour ça. "
-        }
+        },
         {
             "speaker": "ROUTINE_042",
             "text": "Identifie-toi, étranger. Je dois remplir mon rapport avant que le Kernel ne s'aperçoive de ta présence."

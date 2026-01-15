@@ -7,57 +7,10 @@ from rich.panel import Panel
 from rich.align import Align
 from rich.prompt import Prompt
 from rich.box import DOUBLE
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 import time
 import random
 from rich.console import Console
 from rich.text import Text
-
-
-console = Console()
-
-def boot_sequence_temp():
-    # Liste de messages "Lore-friendly"
-    # L'entité informatique se réveille et scanne son propre environnement
-    loading_steps = [
-        "Initialisation du BIOS virtuel...",
-        "Vérification de l'intégrité du noyau...",
-        "Chargement des protocoles de conscience binaire...",
-        "Détection de la signature neurale : {s.player_name}...",  # Optionnel : injecter le nom si connu
-        "Contournement des verrous de sécurité secteur 0x04...",
-        "Allocation de la mémoire tampon (RAM)...",
-        "Établissement de la connexion au réseau fantôme...",
-        "Purge des journaux d'accès illégaux...",
-        "Synchronisation de l'horloge système...",
-        "READY. Accès au terminal autorisé."
-    ]
-
-    with Progress(
-            SpinnerColumn(),  # Un petit spinner qui tourne
-            TextColumn("[bold blue]{task.description}"),
-            BarColumn(bar_width=40, style="dim blue", complete_style="bold cyan"),
-            TaskProgressColumn(),
-            console=console
-    ) as progress:
-        # Création d'une tâche de chargement
-        boot_task = progress.add_task("[cyan]Démarrage...", total=len(loading_steps))
-
-        for step in loading_steps:
-            # On met à jour le texte du message
-            progress.update(boot_task, description=f"[bold cyan]{step}")
-
-            # Temps de pause aléatoire pour simuler des "bottlenecks" (ralentissements)
-            # Ça rend le chargement plus organique/réaliste
-            sleep_time = random.uniform(0.3, 1.2)
-            time.sleep(sleep_time)
-
-            # On avance la barre de 1 unité
-            progress.advance(boot_task)
-
-    # Petit flash final ou pause avant de vider l'écran
-    console.print("[bold green]BOOT_SUCCESS: Système opérationnel.[/]")
-    time.sleep(1)
-    console.clear()
 
 
 
@@ -67,7 +20,7 @@ console = Console()
 
 def boot_sequence():
     boot_steps = [
-        ("INFO", "Initialisation du noyau version 0.4.2-proto..."),
+        ("INFO", f"Initialisation du noyau version {version}..."),
         ("OK", "Vérification des registres de mémoire physique"),
         ("OK", "Montage des partitions de données neurales"),
         ("OK", "Initialisation du bus de communication inter-processus"),
@@ -192,7 +145,7 @@ def ecran_accueil():
     # 2. Affichage du Header avec bordure double
     console.print(Panel(
         Align.center(logo),
-        title="[bold white]v1.0.4-STABLE[/]",
+        title=f"[bold white]{version}[/]",
         subtitle="[blink red]CONNECTION...[/]",
         border_style="bright_blue",
         box=DOUBLE
