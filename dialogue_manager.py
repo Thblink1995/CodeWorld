@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+
 from game import GameState
 from misc import *
 from rich.console import Console
@@ -9,11 +11,6 @@ class DialogueEngine:
         self.state = state
         self.chars = import_file(characters_data_filepath)
         self.dialogues = import_file(diag_path)
-
-        # TODO ajouter
-        #  f"{player_name}": {"color": "bold red", "prefix": f"[!] {player_name}: "}
-        #  dans self.chars
-
         self.console = Console(force_terminal=True, color_system="truecolor")
 
     def typewriter_effect(self, speaker:str, message:str):
@@ -40,13 +37,15 @@ class DialogueEngine:
         for char in full_message:
             self.console.print(char, style=char_info['text_color'], end="", highlight=False)
             # Petit sys.stdout.flush() si besoin pour la fluidité sur Mac
-            #time.sleep(0.2)
+
+            #TODO résoudre le problème de fluidité
+            time.sleep(0.02)
 
         self.console.print()
 
 
 
-    def play_sequence(self, sequence_id:str):
+    def play_sequence(self, sequence_id:str, delay_time:float=0.4):
         """
         state: l'instance de ta classe GameState
         """
@@ -61,6 +60,7 @@ class DialogueEngine:
                 processed_text = f"[Code Error: {e}]"
 
             self.typewriter_effect(line['speaker'], processed_text)
+            time.sleep(delay_time)
         NoColonPrompt.ask("\n[blink white]continuer...[/]")
 
         self.console.print()

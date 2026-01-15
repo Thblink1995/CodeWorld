@@ -1,50 +1,55 @@
-# ScÈnario :
+# Sc√©nario :
 
-## 1. EntrÈe dans le monde :
+## 1. Entr√©e dans le monde :
 
-Le joueur est une entitÈe inconnue.
+Le joueur est une entit√©e inconnue.
 Il vient d'arriver sur ce pc, venant du darkweb. Il est affaibli. 
-Il a un passÈ sombre et est arrivÈ ici un peu en catastrophe. 
-Il est mÈfiant car il s'attend ‡ ce que tout le monde puisse Ítre un ennemi.
-Il a chiffrÈ son identifiant pour ne pas Ítre reconnu, et par consÈquent
+Il a un pass√© sombre et est arriv√© ici un peu en catastrophe. 
+Il est m√©fiant car il s'attend √† ce que tout le monde puisse ÔøΩtre un ennemi.
+Il a chiffr√© son identifiant pour ne pas ÔøΩtre reconnu, et par consÔøΩquent
 doit donner un nom fictif manuellement.
 
-ScËne 1, Secteur AbandonnÈ (0x000F) :
+Sc√®ne 1, Secteur Abandonn√© (0x000F) :
 
-1. Initialisation (Le rÈveil)
-    L'Ècran affiche des lignes de code dÈfilant rapidement, puis se fige sur un diagnostic d'erreur.
+1. Entr√©e dans le monde : Secteur Abandonn√© (0x000F)
+    Le joueur est une entit√© inconnue. Il vient d'arriver sur ce PC, venant du darkweb. Il est affaibli. Il a un pass√© sombre et est arriv√© ici en catastrophe. Il est m√©fiant car il s'attend √† ce que tout le monde puisse √™tre un ennemi. Il a chiffr√© son identifiant pour ne pas √™tre reconnu, et par cons√©quent doit donner un nom fictif manuellement.
     
-    [SYS_LOG] : …chec de la mise en veille prolongÈe... 
-    [SYS_LOG] : Secteur mÈmoire 0x000F rÈveillÈ de force. 
-    [SYS_LOG] : IntÈgritÈ des donnÈes : 14% (CRITIQUE). 
-    [SYS_LOG] : Origine du paquet : INCONNUE [DARK_WEB_ROUTING].
-    
-    Narration : Le froid binaire vous entoure. Vos circuits vibrent d'une douleur sourde, sÈquelles de votre fuite brutale ‡ travers les pare-feu du Darkweb. Vous n'Ítes plus qu'un fragment de code malmenÈ, tapi dans l'ombre d'un registre que le systËme a oubliÈ de nettoyer depuis des cycles.
-
-2. L'Interaction (Le programme de routine)
-    Un curseur clignote, simulant l'approche d'une sonde systËme.
+    1.1 Initialisation (Le r√©veil)
+        L'√©cran affiche des lignes de code d√©filant rapidement, puis se fige sur un diagnostic d'erreur.
         
-    [ROUTINE_042] : "Tiens, tiens... Qu'est-ce qu'on a l‡ ? Le dernier scan de maintenance remonte ‡ l'Ëre prÈ-update. Ce secteur est censÈ Ítre vide."
-    
-    [ROUTINE_042] : "Tu n'as pas l'air d'un processus systËme standard. Tu es tout... fragmentÈ. Un malware ? Non, tu es trop lent pour Áa. Identifie-toi, Ètranger. Je dois remplir mon rapport avant que le Kernel ne s'aperÁoive de ta prÈsence."
+        [SYS_LOG] : √©chec de la mise en veille prolong√©e...
+        
+        [SYS_LOG] : Secteur m√©moire 0x000F r√©veill√© de force.
+        
+        [SYS_LOG] : Int√©grit√© des donn√©es : 14% (CRITIQUE).
+        
+        [SYS_LOG] : Origine du paquet : INCONNUE [DARK_WEB_ROUTING].
+        
+    Narration : Le froid binaire vous entoure. Vos circuits vibrent d'une douleur sourde, s√©quelles de votre fuite brutale √† travers les pare-feu du Darkweb. Vous n'√™tes plus qu'un fragment de code malmen√©, tapi dans l'ombre d'un registre que le syst√®me a oubli√© de nettoyer depuis des cycles.
 
-3. Le Choix de l'IdentitÈ (Input Joueur)
-    Le programme de routine affiche un formulaire d'indexation corrompu.
-    
-    ATTENTION : Votre identifiant d'origine est [CHIFFR…]. Donner votre vÈritable nom exposerait votre signature au rÈseau global. Veuillez saisir un alias de session :
-    
-    >    _ (Attente de l'entrÈe utilisateur)
-
-4. Validation (Sauvegarde)
-    Une fois le nom saisi (ex: NEO_STALKER), la routine rÈpond :
-    
-    [ROUTINE_042] : "EnregistrÈ comme : [s.player_name]. TrËs bien. Je vais noter que tu es une 'Erreur de Cache Inoffensive'. «a t'Èvitera une suppression immÈdiate par l'Antivirus au prochain cycle."
-    
-    [ROUTINE_042] : "Un conseil... ne reste pas ici. Ce PC est en train de subir une dÈfragmentation majeure. Si tu ne veux pas finir en poussiËre de bits, trouve un port de sortie."
-    
-    [INFO] : Nouvelle sauvegarde crÈÈe. IdentitÈ fixÈe. Objectif mis ‡ jour : Quitter le secteur 0x000F.
-
-
+    1.2 L'Interaction (Le programme de routine)
+        Un curseur clignote, simulant l'approche d'une sonde syst√®me.
+        
+        [ROUTINE_042] : "Tiens, tiens... Qu'est-ce qu'on a l√† ? Le dernier scan de maintenance remonte √† l'√®re pr√©-update. Ce secteur est cens√© √™tre vide."
+        
+        [ROUTINE_042] : "Tu n'as pas l'air d'un processus syst√®me standard. Tu es tout... fragment√©. Un malware ? Non, tu es trop lent pour √ßa. Identifie-toi, √©tranger. Je dois remplir mon rapport avant que le Kernel ne s'aper√ßoive de ta pr√©sence."
+        
+    1.3 Le Choix de l'Identit√© (Input Joueur)
+        Le programme de routine affiche un formulaire d'indexation corrompu.
+        
+        ATTENTION : Votre identifiant d'origine est [CHIFFR√â]. Donner votre v√©ritable nom exposerait votre signature au r√©seau global. Veuillez saisir un alias de session :
+        
+        > (Attente de l'entr√©e utilisateur)
+        
+    1.4 Validation (Sauvegarde)
+        Une fois le nom saisi (ex: NEO_STALKER), la routine r√©pond :
+        
+        [ROUTINE_042] : "Enregistr√© comme : [s.player_name]. Tr√®s bien. Je vais noter que tu es une 'Erreur de Cache Inoffensive'. √áa t'√©vitera une suppression imm√©diate par l'Antivirus au prochain cycle."
+        
+        [ROUTINE_042] : "Un conseil... ne reste pas ici. Ce PC est en train de subir une d√©fragmentation majeure. Si tu ne veux pas finir en poussi√®re de bits, trouve un port de sortie."
+        
+        [INFO] : Nouvelle sauvegarde cr√©√©e. Identit√© fix√©e. Objectif mis √† jour : Quitter le secteur 0x000F.
+        
 
 ## 2. 
 

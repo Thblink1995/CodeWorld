@@ -4,7 +4,7 @@ from rich.panel import Panel
 from rich.console import Console
 from dialogue_manager import DialogueEngine
 from game import GameState
-
+from misc import *
 
 class WorldManager:
     def __init__(self, game_state:GameState):
@@ -21,8 +21,7 @@ class WorldManager:
 
     def load_world(self, filepath):
         """Charge les données du monde (JSON)."""
-        with open(filepath, 'r', encoding='utf-8') as f:
-            self.world_data = json.load(f)
+        self.world_data = import_file(filepath)
 
     def register_event_type(self, event_name, func):
         """Permet d'ajouter dynamiquement un nouveau type d'événement (Combat, Hack, etc.)."""

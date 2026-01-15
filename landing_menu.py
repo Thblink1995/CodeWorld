@@ -3,12 +3,118 @@ from rich.table import Table
 from dialogue_manager import DialogueEngine
 from game import GameState
 from misc import *
-from rich.console import Console
 from rich.panel import Panel
 from rich.align import Align
 from rich.prompt import Prompt
 from rich.box import DOUBLE
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
+import time
+import random
+from rich.console import Console
+from rich.text import Text
 
+
+console = Console()
+
+def boot_sequence_temp():
+    # Liste de messages "Lore-friendly"
+    # L'entité informatique se réveille et scanne son propre environnement
+    loading_steps = [
+        "Initialisation du BIOS virtuel...",
+        "Vérification de l'intégrité du noyau...",
+        "Chargement des protocoles de conscience binaire...",
+        "Détection de la signature neurale : {s.player_name}...",  # Optionnel : injecter le nom si connu
+        "Contournement des verrous de sécurité secteur 0x04...",
+        "Allocation de la mémoire tampon (RAM)...",
+        "Établissement de la connexion au réseau fantôme...",
+        "Purge des journaux d'accès illégaux...",
+        "Synchronisation de l'horloge système...",
+        "READY. Accès au terminal autorisé."
+    ]
+
+    with Progress(
+            SpinnerColumn(),  # Un petit spinner qui tourne
+            TextColumn("[bold blue]{task.description}"),
+            BarColumn(bar_width=40, style="dim blue", complete_style="bold cyan"),
+            TaskProgressColumn(),
+            console=console
+    ) as progress:
+        # Création d'une tâche de chargement
+        boot_task = progress.add_task("[cyan]Démarrage...", total=len(loading_steps))
+
+        for step in loading_steps:
+            # On met à jour le texte du message
+            progress.update(boot_task, description=f"[bold cyan]{step}")
+
+            # Temps de pause aléatoire pour simuler des "bottlenecks" (ralentissements)
+            # Ça rend le chargement plus organique/réaliste
+            sleep_time = random.uniform(0.3, 1.2)
+            time.sleep(sleep_time)
+
+            # On avance la barre de 1 unité
+            progress.advance(boot_task)
+
+    # Petit flash final ou pause avant de vider l'écran
+    console.print("[bold green]BOOT_SUCCESS: Système opérationnel.[/]")
+    time.sleep(1)
+    console.clear()
+
+
+
+
+console = Console()
+
+
+def boot_sequence():
+    boot_steps = [
+        ("INFO", "Initialisation du noyau version 0.4.2-proto..."),
+        ("OK", "Vérification des registres de mémoire physique"),
+        ("OK", "Montage des partitions de données neurales"),
+        ("OK", "Initialisation du bus de communication inter-processus"),
+        ("WARN", "Secteur corrompu détecté en 0x000F... Correction en cours"),
+        ("OK", "Correction du secteur 0x000F réussie"),
+        ("OK", "Chargement du pilote 'Conscience_v2.sys'"),
+        ("OK", "Établissement du tunnel VPN cryptographique"),
+        ("INFO", "Recherche de la signature : {s.player_name}"),
+        ("OK", "Signature validée. Identité confirmée."),
+        ("OK", "Lancement du shell interactif 'CodeWorld'"),
+    ]
+
+    console.clear()
+
+    for status, message in boot_steps:
+        # Création de la ligne de log style Linux
+        line = Text()
+
+        # Le tag de statut
+        if status == "OK":
+            line.append("[  ", style="white")
+            line.append("OK", style="bold green")
+            line.append("  ] ", style="white")
+        elif status == "INFO":
+            line.append("[ ", style="white")
+            line.append("INFO", style="bold blue")
+            line.append(" ] ", style="white")
+        elif status == "WARN":
+            line.append("[ ", style="white")
+            line.append("WARN", style="bold yellow")
+            line.append(" ] ", style="white")
+
+        line.append(message, style="white")
+
+        # Affichage de la ligne
+        console.print(line)
+
+        # Délai aléatoire pour simuler l'activité disque/réseau
+        # Parfois très rapide, parfois une petite pause
+        if status == "WARN":
+            time.sleep(1.2)  # Pause plus longue sur les alertes
+        else:
+            time.sleep(random.uniform(0.05, 0.4))
+
+    console.print("\n[bold green]Système prêt. Entrée en mode terminal...[/]\n")
+    time.sleep(1)
+    console.clear()
 def new_player():
     state = GameState("new_player")
     diag = DialogueEngine("data/dialogues/intro.json", state)
