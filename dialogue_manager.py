@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import time
 
-from game import GameState
+from playerstate import PlayerState
 from misc import *
 from rich.console import Console
 
 class DialogueEngine:
-    def __init__(self, diag_path:str, state:GameState):
+    def __init__(self, diag_path:str, state:PlayerState):
         self.console = Console()
         self.state = state
         self.chars = import_file(characters_data_filepath)

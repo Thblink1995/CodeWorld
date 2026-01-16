@@ -10,23 +10,23 @@ from rich.prompt import Prompt
 version = "v0.0.1-alpha"
 
 #----------données globales :
-player_save_filepath = "data/player_save.json"
-repliques_pnj_filepath = "data/dialogues/repliques_pnj.json"
-mob_data_filepath = "data/mob_data.json"
-items_data_filepath = "data/items_data.json"
-characters_data_filepath = "data/characters_data.json"
+player_save_filepath = "player_save.json"
+repliques_pnj_filepath = "dialogues/repliques_pnj.json"
+mob_data_filepath = "mob_data.json"
+items_data_filepath = "items_data.json"
+characters_data_filepath = "characters_data.json"
 #----------------------------
 
 def clear():
     os.system('clear')
 
 def import_file(filename: str) -> dict:
-    with open(filename, "r", encoding="utf-8") as f:
+    with open("data/" + filename, "r", encoding="utf-8") as f:
         donnees_chargees = json.load(f)
     return donnees_chargees
 
 def export_file(filename: str, data) -> None:
-    with open(filename, "w", encoding="utf-8") as f:
+    with open("data" + filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 

@@ -1,20 +1,18 @@
 ﻿# -*- coding: utf-8 -*-
-from misc import *
 from landing_menu import ecran_accueil, boot_sequence
-from game import GameState
-from worldmanager import WorldManager
+from playerstate import PlayerState
+from game_engine import GameEngine
 
 
 def main():
-    boot_sequence()
-    save_key = ecran_accueil()
-    if not save_key:
-        return
-    game_state = GameState("Debug§")
-    manager = WorldManager(game_state)
-    manager.load_world("data/regions/test_world.json")
-    manager.enter_location("LOBBY_01")
-    game_state.save()
+    #boot_sequence()
+    #save_key = ecran_accueil()
+    #if not save_key:
+    #    return
+    player_state = PlayerState("Debug§")
+    manager = GameEngine(player_state)
+    manager.play_scene("regions/sunless_skies/port_avalon.json")
+    player_state.save()
 
 
 main()

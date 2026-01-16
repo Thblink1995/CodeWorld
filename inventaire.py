@@ -1,4 +1,4 @@
-from game import *
+from playerstate import *
 
 class Inventaire:
     def __init__(self):

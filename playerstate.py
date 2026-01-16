@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from misc import *
-class GameState:
+class PlayerState:
     def __init__(self, save_key):
         save_data = import_file(player_save_filepath)
         player_data = save_data[save_key]
         self.player_name = save_key
-        self.player_class = player_data["class"]
         self.max_health = player_data["max_health"]
         self.current_health = player_data["current_health"]
         self.inventory = player_data["inventory"]
@@ -16,7 +15,6 @@ class GameState:
 
     def save(self):
         data = {
-            "classe": self.player_class,
             "max_health": self.max_health,
             "current_health": self.current_health,
             "inventory": self.inventory,
