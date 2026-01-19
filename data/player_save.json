@@ -5,7 +5,8 @@
         "inventory": [
             1
         ],
-        "location": "/regions/sunless_skies/port_avalon.json"
+        "location": "sceneId",
+        "start_location": ""
     },
     "new_player": {
         "class": "",

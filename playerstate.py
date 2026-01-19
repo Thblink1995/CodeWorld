@@ -9,6 +9,7 @@ class PlayerState:
         self.current_health = player_data["current_health"]
         self.inventory = player_data["inventory"]
         self.location = player_data["location"]
+        self.start_location = None
 
     def get_inventory(self):
         raise NotImplementedError
