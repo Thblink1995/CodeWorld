@@ -1,0 +1,16 @@
+{
+  "characters": {
+    "SYSTEM": {"color": "bold white on blue", "prefix": "SYS > "},
+    "KRONOS": {"color": "bold green", "prefix": "KRONOS@ROOT:~$ "},
+    "IO": {"color": "bold magenta", "prefix": "IO_GHOST >> "},
+    "ERROR": {"color": "bold red", "prefix": "[!] ERROR: "}
+  },
+  "sequences": {
+    "init_sequence": [
+      {"speaker": "SYSTEM", "text": "Chargement des protocoles neuronaux..."},
+      {"speaker": "KRONOS", "text": "Tu m'entends ? Ta signature binaire est instable."},
+      {"speaker": "IO", "text": "Laisse-le tranquille, Kronos. Il vient de naître."},
+      {"speaker": "SYSTEM", "text": "Identification réussie. Bienvenue, {player_name}."}
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "port_avalon",
+  "name": "Port Avalon",
+  "description": "Les docks sont plongés dans un brouillard vert...",
+  "type": "hub",
+  "options": [
+    {
+      "label": "Parler à l'Intendant",
+      "type": "evenement",
+      "data": "dialogue_intendant"
+    },
+    {
+      "label": "Explorer la ruelle sombre",
+      "type": "scene",
+      "data": "ruelle_mysterieuse"
+    }
+  ]
+}
