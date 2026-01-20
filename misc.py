@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
-import io
 import os
-import random
 import json
-import sys
-
 from rich.prompt import Prompt
 
 version = "v0.0.1-alpha"
@@ -20,6 +16,16 @@ scenes_dir_path = "data/scenes/"
 
 def clear():
     os.system('clear')
+
+def list_files_by_extension(directory, extension):
+    rep = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(extension):
+                print(os.path.join(root, file))
+                rep.append(os.path.join(root, file))
+    return rep
+
 
 def import_file(filename: str) -> dict:
     with open(filename, "r", encoding="utf-8") as f:
@@ -61,19 +67,24 @@ class NoColonPrompt(Prompt):
 class Stack:
     def __init__(self):
         self.list = []
-        self.top_element = self.list[-1]
+        self.len = 0
+
+    @property
+    def top_element(self):
+        if self.len > 0:
+            return self.list[self.len-1]
+        raise ValueError("L'inventaire est vide")
 
     def pop(self):
+        self.len -= 1
         return self.list.pop()
 
     def push(self, element):
+        self.len += 1
         self.list.append(element)
 
     def is_empty(self):
         return len(self.list) == 0
-
-    def len(self):
-        return len(self.list)
 
     def debug_print(self):
         print(self.list)

@@ -10,8 +10,10 @@ def main():
     #if not save_key:
     #    return
     player_state = PlayerState("Debug§")
-    manager = GameEngine(player_state)
-    manager.play_scene("regions/sunless_skies/port_avalon.json")
+    engine = GameEngine(player_state)
+    engine.player.debug_print_player_data()
+    engine.run()
+    engine.scene_manager.debug_print_scenes_dic()
     player_state.save()
 
 

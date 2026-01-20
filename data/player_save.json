@@ -5,24 +5,18 @@
         "inventory": [
             1
         ],
-        "location": "sceneId",
-        "start_location": ""
+        "location": "port_avalon",
+        "start_location": "port_avalon"
     },
     "new_player": {
         "class": "",
         "max_health": 10,
         "current_health": 10,
         "inventory": [],
-        "location": ""
+        "location": "",
+        "start_location": ""
     },
     "Théobald": {
-        "classe": "",
-        "max_health": 10,
-        "current_health": 10,
-        "inventory": [],
-        "location": ""
-    },
-    "tktmemepas": {
         "classe": "",
         "max_health": 10,
         "current_health": 10,
