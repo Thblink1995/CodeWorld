@@ -3,7 +3,7 @@
   "name": "Port Avalon",
   "description": "Les docks sont plongés dans un brouillard vert...",
   "type": "hub",
-  "options": [
+  "data": [
     {
       "label": "Parler à l'Intendant",
       "type": "evenement",

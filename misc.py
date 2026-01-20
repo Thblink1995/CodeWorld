@@ -28,6 +28,7 @@ def list_files_by_extension(directory, extension):
 
 
 def import_file(filename: str) -> dict:
+    print(f"importing {filename}")
     with open(filename, "r", encoding="utf-8") as f:
         donnees_chargees = json.load(f)
     return donnees_chargees
