@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-
+import random
 from playerstate import PlayerState
 from misc import *
 from rich.console import Console

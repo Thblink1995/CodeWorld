@@ -18,7 +18,7 @@ class HubScene(Scene):
             print(i.label, i.type, i.data)
 
     def handle_input(self)-> tuple[str, any]:
-        # 2. On demande un choix
+        """Transforme l'input en une instruction (action_type, action_data)"""
         choices = [str(i) for i in range(1, len(self.options) + 1)]
         choix = Prompt.ask("Votre choix :", choices=choices)
 
@@ -26,8 +26,7 @@ class HubScene(Scene):
             index = int(choix) - 1
             action_choisie = self.options[index]
 
-            # 3. On envoie l'action au registre pour exécution
-            return action_choisie.type, action_choisie.data
+            return "SCENE", action_choisie.data
         except (ValueError, IndexError):
             print("Choix invalide.")
 
@@ -38,4 +37,4 @@ class Option:
         self.data = data  # ID de la scène ou de l'événement cible
 
     def debug_print_option(self):
-        print(self.label, self.id)
+        print(self.label, self.option_type, self.data)

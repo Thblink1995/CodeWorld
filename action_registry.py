@@ -5,9 +5,12 @@ class ActionRegistry:
         self.engine = engine
         # Le dictionnaire de correspondance
         self.actions = {
-            "scene": self.change_scene,
-            "evenement": self.trigger_event,
+            "SCENE": self.change_scene,
         }
+
+    @property
+    def state(self):
+        return self.engine.player
 
     def execute(self, action_type, data):
         # On récupère la fonction et on l'exécute avec les données
@@ -22,5 +25,4 @@ class ActionRegistry:
 
     def trigger_event(self, data):
         print(f"Événement déclenché : {data}")
-
 

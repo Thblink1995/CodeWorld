@@ -1,0 +1,14 @@
+{
+  "id": "ruelle_mysterieuse",
+  "name": "Ruelle Mystérieuse",
+  "description": "",
+  "type": "dialogue",
+  "data": {
+    "welcome_logic":
+      {"speaker": "SYSTEM", "text": "Identification réussie. Bienvenue, {s.player_name}."},
+    "temp": [
+      {"speaker": "SYSTEM", "text": "temp"}
+    ],
+    "next_scene": "port_avalon"
+  }
+}

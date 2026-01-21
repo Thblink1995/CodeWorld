@@ -11,7 +11,7 @@
     },
     {
       "label": "Explorer la ruelle sombre",
-      "type": "scene",
+      "type": "hub",
       "data": "ruelle_mysterieuse"
     }
   ]

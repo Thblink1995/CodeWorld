@@ -33,10 +33,10 @@ class GameEngine:
         print(self.player.start_location)
         self.switch_to(self.player.start_location)
         while self.is_running:
-            self.current_scene = self.history_id_stack.top_element
+            self.current_scene = self.scene_manager.get_scene(self.history_id_stack.top_element)
             self.current_scene.render()
-            self.current_scene.handle_input()
-
+            action_type, action_data = self.current_scene.handle_input()
+            self.action_registry.execute(action_type, action_data)
             #player_input = NoColonPrompt("[dim cyan]0x{s.player_id}[/] [bold white]>[/]")
             #launch according to input
 
