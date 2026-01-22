@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from rich.table import Table
-from dialogue_manager import DialogueEngine
 from playerstate import PlayerState
 from misc import *
 from rich.panel import Panel
@@ -69,8 +68,9 @@ def boot_sequence():
     time.sleep(1)
     console.clear()
 def new_player():
+    #TODO à refaire
     state = PlayerState("new_player")
-    diag = DialogueEngine("data/dialogues/intro.json", state)
+    #diag = DialogueEngine("data/dialogues/intro.json", state)
     diag.play_sequence("1")
     diag.play_sequence("2")
     diag.play_sequence("3")

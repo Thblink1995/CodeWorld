@@ -9,7 +9,8 @@ from .dialogue_scene import DialogueScene
 SCENE_CLASSES = {
     "hub": HubScene,
     "null": NullScene,
-    "dialogue": DialogueScene
+    "dialogue": DialogueScene,
+    "null_scene": NullScene
 }
 
 def get_scene_class(scene_type: str):

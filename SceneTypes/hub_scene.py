@@ -2,7 +2,7 @@
 from .base_scene import *
 class HubScene(Scene):
     def __init__(self, scene_data: dict):
-        super().__init__(scene_data)
+        super().__init__(scene_data, {})
         self.scene_raw_data = scene_data
         self.id = scene_data['id']
         self.name = scene_data['name']

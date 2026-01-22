@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from .base_scene import *
 class NullScene(Scene):
-    def __init__(self):
+    def __init__(self, scene_data: dict, state):
+        super().__init__(scene_data, {})
         self.id = "NullScene"
         self.name = "NullScene"
         self.description = "Placeholder Scene"

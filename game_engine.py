@@ -10,7 +10,7 @@ class GameEngine:
         self.player = player
         self.scene_manager = SceneManager()
         self.is_running = True
-        self.current_scene: Scene = NullScene()
+        self.current_scene: Scene = self.scene_manager.get_scene("null_scene", player)
         self.history_id_stack: Stack = Stack()
         self.action_registry = ActionRegistry(self)
 
@@ -20,7 +20,7 @@ class GameEngine:
     def switch_to(self, scene_id: str):
         """Charge une nouvelle scène et l'ajoute à l'historique."""
         self.history_id_stack.push(scene_id)
-        self.current_scene = self.scene_manager.get_scene(scene_id)
+        self.current_scene = self.scene_manager.get_scene(scene_id, self.player)
 
     def go_back(self):
         """Revient à la scène précédente (utile pour les sous-menus)."""
@@ -33,7 +33,7 @@ class GameEngine:
         print(self.player.start_location)
         self.switch_to(self.player.start_location)
         while self.is_running:
-            self.current_scene = self.scene_manager.get_scene(self.history_id_stack.top_element)
+            self.current_scene = self.scene_manager.get_scene(self.history_id_stack.top_element, self.player)
             self.current_scene.render()
             action_type, action_data = self.current_scene.handle_input()
             self.action_registry.execute(action_type, action_data)

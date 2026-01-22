@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from rich.prompt import Prompt
 from rich.console import Console
-
 class Scene:
-    def __init__(self, scene_data):
+    def __init__(self, scene_data, state):
         self.scene_raw_data = scene_data
         self.id = scene_data['id']
         self.type = scene_data['type']
-        self.console = Console()
+        self.console = Console(force_terminal=True, color_system="truecolor")
+        self.state = state
 
     def render(self):
         """Affiche la scène"""

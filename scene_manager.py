@@ -22,8 +22,8 @@ class SceneManager:
     def debug_print_scenes_dic(self):
         print(self.scenes_dict)
 
-    def get_scene(self, scene_id: str) -> Scene:
+    def get_scene(self, scene_id: str, state) -> Scene:
         """charge une scène en mémoire à l'aide de son id"""
         data = import_file(self.scenes_dict[scene_id])
-        klass:Scene = get_scene_class(data['type'])
-        return klass(data)
+        klass: Scene = get_scene_class(data['type'])
+        return klass(data, state)
