@@ -22,5 +22,19 @@
         "current_health": 10,
         "inventory": [],
         "location": ""
+    },
+    "tktemepas": {
+        "max_health": 10,
+        "current_health": 10,
+        "inventory": [],
+        "location": "",
+        "start_location": ""
+    },
+    "Tyhéobald": {
+        "max_health": 10,
+        "current_health": 10,
+        "inventory": [],
+        "location": "",
+        "start_location": ""
     }
 }

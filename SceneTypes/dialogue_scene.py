@@ -61,13 +61,16 @@ class DialogueScene(Scene):
     def play_diag(self):
         self.console.clear()
         self.console.print(f"[dim]— LOGS DE SESSION :  —[/]\n") #{self.name.upper()}
-        prev_speaker = None
+        last_speaker = None
         for line in self.dialogues:
+            current_speaker = line.get('speaker')
+            if last_speaker is not None and current_speaker != last_speaker:
+                self.console.print()  # Add a blank line if speaker changes
             self.play_sequence(line)
-            if line['speaker'] != prev_speaker:
-                self.console.print()
-            prev_speaker = line['speaker']
+            self.console.print()
+            last_speaker = current_speaker
         self.console.print()
         NoColonPrompt.ask("\n[blink white]Continuer...[/]")
+
 
 
