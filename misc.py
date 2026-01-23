@@ -22,13 +22,13 @@ def list_files_by_extension(directory, extension):
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith(extension):
-                print(os.path.join(root, file))
+                #print(os.path.join(root, file))
                 rep.append(os.path.join(root, file))
     return rep
 
 
 def import_file(filename: str) -> dict:
-    print(f"importing {filename}")
+    #print(f"importing {filename}")
     with open(filename, "r", encoding="utf-8") as f:
         donnees_chargees = json.load(f)
     return donnees_chargees
@@ -38,29 +38,59 @@ def export_file(filename: str, data) -> None:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 
-def parse_script(txt_path):
-    dialogues = {}
-    current_key = None
+import json
 
-    base_path = os.path.splitext(txt_path)[0]  # Enlève l'extension .txt
-    json_path = base_path + ".json"
 
-    with open(txt_path, 'r', encoding='utf-8') as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith("#"): continue  # Ignore vide et commentaires
+def txt_to_dialogue_scene_json(file_path):
+    """
+    Transforme un fichier texte structuré en JSON pour le système de dialogue.
+    """
+    result = {
+        "id": "",
+        "name": "",
+        "description": "",
+        "type": "dialogue",
+        "data": {
+            "lines": [],
+            "next_scene": "null_scene"
+        }
+    }
 
-            if line.startswith("=="):
-                current_key = line.replace("==", "").strip()
-                dialogues[current_key] = []
-            elif "|" in line and current_key:
-                speaker, text = line.split("|", 1)
-                dialogues[current_key].append({
-                    "speaker": speaker.strip(),
-                    "text": text.strip()
-                })
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-    export_file(json_path, dialogues)
+    # Séparation entre les métadonnées et les répliques (séparateur ---)
+    parts = content.split('---')
+    header = parts[0].strip().split('\n')
+    body = parts[1].strip().split('\n') if len(parts) > 1 else []
+
+    # Parsing du Header (id, name, description, etc.)
+    for line in header:
+        if ':' in line:
+            key, value = line.split(':', 1)
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key in ["id", "name", "description", "type"]:
+                result[key] = value
+            elif key == "next_scene":
+                result["data"]["next_scene"] = value
+
+    # Parsing du Corps (Dialogue)
+    for line in body:
+        line = line.strip()
+        if not line: continue  # Sauter les lignes vides
+
+        if ':' in line:
+            speaker, text = line.split(':', 1)
+            result["data"]["lines"].append({
+                "speaker": speaker.strip(),
+                "text": text.strip()
+            })
+    new_file_path = file_path.replace('.txt', '.json')
+    export_file(new_file_path, result)
+    return result
+
 
 class NoColonPrompt(Prompt):
     prompt_suffix = " "

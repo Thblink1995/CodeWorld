@@ -1,0 +1,19 @@
+{
+    "id": "test_dialogue",
+    "name": "Ceci est un test",
+    "description": "Ceci est une description de test",
+    "type": "dialogue",
+    "data": {
+        "lines": [
+            {
+                "speaker": "SYSTEM",
+                "text": "Ceci est un test"
+            },
+            {
+                "speaker": "SYSTEM",
+                "text": "Ceci est une description de test"
+            }
+        ],
+        "next_scene": "null_scene"
+    }
+}

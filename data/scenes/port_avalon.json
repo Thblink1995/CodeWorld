@@ -13,6 +13,11 @@
       "label": "Explorer la ruelle sombre",
       "type": "hub",
       "data": "ruelle_mysterieuse"
+    },
+    {
+      "label": "tktmemepas",
+      "type": "dialogue",
+      "data": "test_dialogue"
     }
   ]
 }

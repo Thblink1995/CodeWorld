@@ -30,10 +30,13 @@ class GameEngine:
 
     def run(self) -> None:
         """Lance la boucle de jeu (Game Loop) principale."""
-        print(self.player.start_location)
+        #print(self.player.start_location)
         self.switch_to(self.player.start_location)
         while self.is_running:
             self.current_scene = self.scene_manager.get_scene(self.history_id_stack.top_element, self.player)
+            if self.current_scene.id == "NullScene" :
+                print("---FIN---")
+                break
             self.current_scene.render()
             action_type, action_data = self.current_scene.handle_input()
             self.action_registry.execute(action_type, action_data)

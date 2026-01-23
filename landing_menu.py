@@ -11,8 +11,7 @@ import random
 from rich.console import Console
 from rich.text import Text
 
-
-
+from scene_manager import SceneManager
 
 console = Console()
 
@@ -67,13 +66,14 @@ def boot_sequence():
     console.print("\n[bold green]Système prêt. Entrée en mode terminal...[/]\n")
     time.sleep(1)
     console.clear()
+
 def new_player():
     #TODO à refaire
     state = PlayerState("new_player")
-    #diag = DialogueEngine("data/dialogues/intro.json", state)
-    diag.play_sequence("1")
-    diag.play_sequence("2")
-    diag.play_sequence("3")
+    scene_manager = SceneManager()
+    intro_scene = scene_manager.get_scene("intro", state)
+    intro_scene.render()
+
     new_player_name = Prompt.ask("Identifiez-vous")
     state.player_name = new_player_name
     state.save()
@@ -84,7 +84,7 @@ def new_player():
 def choix_sauvegarde():
     # 1. Chargement des données
     # On suppose que import_file renvoie un dictionnaire
-    player_saves = import_file("data/player_save.json")
+    player_saves = import_file(player_save_filepath)
 
     if not player_saves:
         console.print("[bold red]Aucune archive détectée dans le secteur mémoire.[/]")
@@ -128,8 +128,6 @@ def choix_sauvegarde():
 
     console.print(f"[bold green]Chargement de l'archive {selection} en cours...[/]")
     return selection
-
-console = Console()
 
 
 def ecran_accueil():

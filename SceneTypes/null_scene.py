@@ -2,7 +2,7 @@
 from .base_scene import *
 class NullScene(Scene):
     def __init__(self, scene_data: dict, state):
-        super().__init__(scene_data, {})
+        super().__init__(scene_data, state)
         self.id = "NullScene"
         self.name = "NullScene"
         self.description = "Placeholder Scene"
@@ -12,5 +12,5 @@ class NullScene(Scene):
     def render(self):
         print(self.name)
 
-    def handle_input(self, user_input) -> tuple[str, any]:
+    def handle_input(self) -> tuple[str, any]:
         return None, None

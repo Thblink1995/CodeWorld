@@ -1,0 +1,9 @@
+id: test_dialogue
+name: Ceci est un test
+description: Ceci est une description de test
+type: dialogue
+next_scene: null_scene
+
+---
+SYSTEM: Ceci est un test
+SYSTEM: Ceci est une description de test

@@ -1,0 +1,9 @@
+id: dialogue_intendant
+name: L'Intendant
+description: Un homme sec et élancé. Son visage fait légèrement penser à celui d'un rat.
+type: dialogue
+next_scene: null_scene
+
+---
+SYSTEM: JE SUIS EN TRAIN DE TESTER LES DIALOGUES
+SYSTEM: TON NOM EST {s.player_name}

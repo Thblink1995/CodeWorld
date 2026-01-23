@@ -1,6 +1,9 @@
 {
   "id": "lobby_01",
-  "LOBBY_01": {
+  "name": "LOBBY_01",
+  "description": "Un carrefour de données encombré de requêtes fantômes.",
+  "type": "hub",
+  "data": {
     "name": "Point d'Accès Principal",
     "description": "Un carrefour de données encombré de requêtes fantômes.",
     "on_enter": [
