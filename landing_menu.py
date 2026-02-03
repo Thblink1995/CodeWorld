@@ -101,6 +101,8 @@ def choix_sauvegarde():
 
     # On remplit la table avec les clés (ID) et les infos
     for save_id, data in player_saves.items():
+        if save_id == "new_player" :
+            continue
         # On extrait les infos (ajuste selon les clés réelles de ton GameState)
         name = data.get("player_name", "Inconnu")
         hp = data.get("hp", "??")

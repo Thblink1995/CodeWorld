@@ -10,6 +10,12 @@
       },
       {
         "speaker": "SYSTEM", "text": "TON NOM EST {s.player_name}"
+      },
+      {
+        "speaker": "player", "text": "ah bon ok"
+      },
+      {
+        "speaker": "player", "text": "c'est possible de changer ou pas ?"
       }
     ],
     "next_scene": "port_avalon"

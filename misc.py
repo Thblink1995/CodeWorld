@@ -7,7 +7,7 @@ version = "v0.0.1-alpha"
 
 #----------données globales :
 player_save_filepath = "data/player_save.json"
-repliques_pnj_filepath = "data/dialogues/repliques_pnj.json"
+repliques_pnj_filepath = "data/repliques_pnj.json"
 mob_data_filepath = "data/mob_data.json"
 items_data_filepath = "data/items_data.json"
 characters_data_filepath = "data/characters_data.json"

@@ -12,8 +12,6 @@ def main():
         return
     player_state = PlayerState("Debug§")
     engine = GameEngine(player_state)
-    #engine.player.debug_print_player_data()
-    #txt_to_dialogue_scene_json("data/scenes/test_dialogue_scene.txt")
     engine.run()
     engine.scene_manager.debug_print_scenes_dic()
     player_state.save()
