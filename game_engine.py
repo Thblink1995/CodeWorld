@@ -40,6 +40,7 @@ class GameEngine:
             self.current_scene.render()
             action_type, action_data = self.current_scene.handle_input()
             self.action_registry.execute(action_type, action_data)
+            clear()
             #player_input = NoColonPrompt("[dim cyan]0x{s.player_id}[/] [bold white]>[/]")
             #launch according to input
 

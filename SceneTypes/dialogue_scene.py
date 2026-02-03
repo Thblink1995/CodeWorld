@@ -4,8 +4,6 @@ import time
 import random
 from misc import *
 
-
-#TODO à implémenter
 class DialogueScene(Scene):
     def __init__(self, scene_data: dict, state):
         super().__init__(scene_data, state)
@@ -15,6 +13,7 @@ class DialogueScene(Scene):
 
     def render(self):
         self.play_diag()
+
 
     def handle_input(self) -> tuple[str, any]:
         return "SCENE", self.next_scene
