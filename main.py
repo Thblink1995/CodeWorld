@@ -6,7 +6,7 @@ from game_engine import GameEngine
 
 
 def main():
-    boot_sequence()
+    #boot_sequence()
     save_key = ecran_accueil()
     if not save_key:
         return
