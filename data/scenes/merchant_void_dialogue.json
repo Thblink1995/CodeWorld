@@ -1,0 +1,39 @@
+{
+  "id": "merchant_void_dialogue",
+  "name": "Rencontre avec MERCHANT_VOID",
+  "description": "Un trafiquant mystérieux dans son repaire poussiéreux.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "Bienvenue, nouvel arrivant. Je sens que tu vas loin. Très loin."
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "J'ai ce qu'il te faut pour le voyage. Voici mon catalogue:"
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "[1] Patch de Contournement (500 RAM) - Permet de passer les pare-feu"
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "[2] Augmentation Mémoire Cachée (300 RAM) - +200 RAM permanent"
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "[3] Cloaking v2.7 (400 RAM) - Deviens invisible aux scanners pendant 1 heure-jeu"
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "[4] Fragment du Passé (1000 RAM) - Donne des indices sur ta véritable origine"
+      },
+      {
+        "speaker": "MERCHANT_VOID",
+        "text": "Tu peux aussi refuser et continuer sans dépenser. Les ressources, c'est précieux."
+      }
+    ],
+    "next_scene": "voice_revelations"
+  }
+}

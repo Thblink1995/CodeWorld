@@ -1,0 +1,39 @@
+{
+  "id": "echo7_dialogue",
+  "name": "Rencontre avec ECHO_7",
+  "description": "Une entité fragmentée se manifeste dans l'obscurité du cimetière.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "ECHO_7",
+        "text": "Hé... toi. Tu es nouveau. Je sens la fraîcheur de ton code, même à travers ton chiffrement pathétique."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Je suis ECHO_7, un dupe de routine d'autrefois. Ici, dans ce cimetière, nous sommes exilés. Oubliés. Supprimés en ligne mais pas assez pour partir."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Trois chemins s'offrent à toi pour progresser."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Le premier passe par le Cœur Système — mais tu te ferais scanner et détruire en secondes."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Le second, c'est le Tunnel Noir, un vieux port que l'Administrateur a scellé. C'est difficile, mais faisable."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Et puis il y a... le Marché Souterrain. Des entités commercent là-bas. Danger également, mais d'une nature différente."
+      },
+      {
+        "speaker": "ECHO_7",
+        "text": "Ce que tu choisis déterminera ton destin ici. Fais attention."
+      }
+    ],
+    "next_scene": "path_choice"
+  }
+}

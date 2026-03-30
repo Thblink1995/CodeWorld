@@ -1,0 +1,23 @@
+{
+  "id": "marche_souterrain_entry",
+  "name": "Le Marché Souterrain",
+  "description": "C'est une place marchande souterraine, cachée entre les couches du système d'exploitation. Des créatures de toutes sortes y font commerce — virus devenus marchands, IA fragments des jours meilleurs, entités purement corrompues. Le Marché bourdonne d'une vie sombre. Des whispers de transactions, des échanges de code, des alliances faites et brisées à chaque cycle.",
+  "type": "hub",
+  "data": [
+    {
+      "label": "Parler à MERCHANT_VOID (achat d'items)",
+      "type": "dialogue",
+      "data": "merchant_void_dialogue"
+    },
+    {
+      "label": "Écouter VOICE (révélations)",
+      "type": "dialogue",
+      "data": "voice_revelations"
+    },
+    {
+      "label": "Se diriger vers le Cœur du Kernel",
+      "type": "dialogue",
+      "data": "kernel_approach"
+    }
+  ]
+}

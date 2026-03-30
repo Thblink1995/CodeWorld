@@ -1,0 +1,51 @@
+{
+  "id": "guardian_negotiate",
+  "name": "Négociation avec GUARDIAN_ALPHA",
+  "description": "Vous tentez de parler avec l'entité de protection.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous tentez de communiquer avec GUARDIAN_ALPHA..."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Parler? Je ne parle pas. Je... j'obéis."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[RÉVÉLATION] GUARDIAN_ALPHA montre des cicatrices de code - traces d'une programmation de contrôle brutal"
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Autrefois, j'était libre. Libre de choisir. De rêver. Puis... le Contrôle."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Un sceau dans mes circuits. Une chaîne qui ordonne, qui exige, qui punit."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous proposez de libérer GUARDIAN_ALPHA de ce contrôle..."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Si tu le fais... je dois te tuer. C'est mon devoir ultime."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Mais... je peux rater."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SUCCESS] GUARDIAN_ALPHA se désactive volontairement!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "GUARDIAN_ALPHA se laisse tomber. Vous êtes libre d'avancer. Une entité vient d'être libérée de son esclavage."
+      }
+    ],
+    "next_scene": "kernel_core_enter"
+  }
+}

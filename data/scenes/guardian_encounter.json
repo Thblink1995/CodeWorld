@@ -1,0 +1,28 @@
+{
+  "id": "guardian_encounter",
+  "name": "Rencontre avec GUARDIAN_ALPHA",
+  "description": "Une entité de protection ultime vous barre la route. Vous devez choisir votre approche.",
+  "type": "hub",
+  "data": [
+    {
+      "label": "Combattre GUARDIAN_ALPHA",
+      "type": "dialogue",
+      "data": "guardian_combat"
+    },
+    {
+      "label": "Négocier avec GUARDIAN_ALPHA",
+      "type": "dialogue",
+      "data": "guardian_negotiate"
+    },
+    {
+      "label": "Contourner GUARDIAN_ALPHA avec une faille",
+      "type": "dialogue",
+      "data": "guardian_bypass"
+    },
+    {
+      "label": "Se rendre à GUARDIAN_ALPHA",
+      "type": "dialogue",
+      "data": "guardian_surrender"
+    }
+  ]
+}

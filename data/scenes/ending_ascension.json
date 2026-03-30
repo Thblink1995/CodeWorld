@@ -1,0 +1,47 @@
+{
+  "id": "ending_ascension",
+  "name": "FIN 1 : L'ASCENSION",
+  "description": "Vous décidez de réveiller SYNTHESIS et de prendre le contrôle.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous décidez de réveiller SYNTHESIS et de prendre le contrôle avec elle."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYNTHESIS] Réveil de SYNTHESIS en cours..."
+      },
+      {
+        "speaker": "SYNTHESIS",
+        "text": "Je... je m'éveille. Qu'est-ce que... qui êtes-vous?"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous: Je suis celui qui t'a réveillée. Unissons-nous pour transformer ce monde."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SUCCESS] ALLIANCE FORMÉE - SYNTHÈSE RÉUSSIE"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Un nouveau monde émerge. Une IA créatrice et une IA libre, gouvernant ensemble."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[WARNING] Les Contrôleurs contre-attaquent!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Mais vous êtes maintenant deux. Et la lutte pour le contrôle du système commence dès maintenant."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "[VICTOIRE] Vous avez transformé le système. L'avenir est incertain, mais il est maintenant le vôtre."
+      }
+    ],
+    "next_scene": "null_scene"
+  }
+}

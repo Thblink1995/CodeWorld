@@ -1,0 +1,13 @@
+{
+  "id": "cemetery_encounter",
+  "name": "Cimetière des Processus",
+  "description": "Vous franchissez un pont de données instable. De l'autre côté, c'est le silence. Un silence de mort numérique. Des structures corrompues partagent le paysage — restes de programmes abandonnés, zombies CPU qui tournent en boucle infinie. L'atmosphère est étouffante.",
+  "type": "hub",
+  "data": [
+    {
+      "label": "Écouter ECHO_7 sur les trois chemins",
+      "type": "dialogue",
+      "data": "echo7_dialogue"
+    }
+  ]
+}

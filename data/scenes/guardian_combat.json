@@ -1,0 +1,51 @@
+{
+  "id": "guardian_combat",
+  "name": "Combat contre GUARDIAN_ALPHA",
+  "description": "Une bataille épique au cœur du système.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Tu oses?"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Bataille de système contre système lancée!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Un affrontement brutal commence. L'énergie crépite autour de vous."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Attaque CPU! Dégâts importants à GUARDIAN_ALPHA..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] GUARDIAN_ALPHA contre-attaque! Vous prenez des dégâts!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "La bataille fait rage. Les deux forces se heurtent violemment."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Un coup décisif! GUARDIAN_ALPHA est partiellement désactivée!"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[ALERT] INTRUSION AU NIVEAU KERNEL DÉTECTÉE"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[ALERT] Countdown d'effacement lancé: 15 minutes"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous avez remporté la bataille, mais au prix d'une exposition totale. Le système entier sait maintenant que vous êtes là."
+      }
+    ],
+    "next_scene": "kernel_core_enter"
+  }
+}

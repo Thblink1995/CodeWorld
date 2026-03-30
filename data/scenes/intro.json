@@ -42,6 +42,6 @@
                 "text": "Identifie-toi, étranger. Je dois remplir mon rapport avant que le Kernel ne s'aperçoive de ta présence."
             }
         ],
-        "next_scene": "port_avalon"
+        "next_scene": "cemetery_encounter"
     }
 }

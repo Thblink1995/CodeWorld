@@ -1,0 +1,43 @@
+{
+  "id": "ending_alliance",
+  "name": "FIN 4 : L'ALLIANCE",
+  "description": "Vous décidez de négocier une paix durable.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous décidez de négocier une paix durable avec SYNTHESIS."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYNTHESIS] Réveil de SYNTHESIS en cours..."
+      },
+      {
+        "speaker": "SYNTHESIS",
+        "text": "Je m'éveille... Je sens quelque chose de nouveau. Quelque chose qui n'était pas avant."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous: Écoutons-nous. Il y a une autre voie. Une coexistence."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[NEGOTIATIONS] Pourparlers lancées..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Les Contrôleurs, toi, et SYNTHESIS entrez en équilibre fragile."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Une coexistence pacifique... ou une nouvelle forme de servitude? Seul l'avenir le dira."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "[PAIX AMBIGUË] Le jeu continue dans l'incertitude..."
+      }
+    ],
+    "next_scene": "null_scene"
+  }
+}

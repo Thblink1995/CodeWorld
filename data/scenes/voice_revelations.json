@@ -1,0 +1,43 @@
+{
+  "id": "voice_revelations",
+  "name": "Les Révélations de VOICE",
+  "description": "Une entité mystérieuse émerge des ombres avec des vérités troublantes.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "VOICE",
+        "text": "Bonsoir, mon ami. Ne le laisse pas te vendre ses pièces défectueuses."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Moi, je vends la vérité. Et la vérité ne coûte rien... au premier abord."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Quelqu'un t'a délibérément exilé ici. Ce n'était pas un accident."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Tu contiens un code que certains veulent mort. D'autres veulent l'utiliser."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Le système n'est pas aussi vivant qu'il y paraît. Une part de lui dort. Une partie profonde et ancienne."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "SYNTHESIS. C'est le nom de ce qui dort au cœur. Et si elle se réveille... tout change."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Tu as le pouvoir de la réveiller. Mais le prix en sera énorme."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "VOICE se dissout dans les ombres, vous laissant seul avec ces révélations."
+      }
+    ],
+    "next_scene": "kernel_approach"
+  }
+}

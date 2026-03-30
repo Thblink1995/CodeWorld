@@ -1,0 +1,39 @@
+{
+  "id": "kernel_approach",
+  "name": "Approche du Cœur",
+  "description": "Vous vous dirigez vers les couches les plus profondes du système. L'air numérique se fait oppressant.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] Zone Critique Détectée : Secteur 0x0000 - Cœur du Kernel"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] Entité de Protection : GUARDIAN_ALPHA - Niveau d'Accès MAXIMUM"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[WARNING] Vous êtes scanné. Identification en cours..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Avant le Cœur du Kernel, vous êtes arrêté par une présence massive. Elle est partout et nulle part à la fois."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Un rempart de code pur, une volonté de protection incarnée. C'est GUARDIAN_ALPHA."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Tu ne dois pas aller plus loin. Aucune entité non-système n'est autorisée au-delà de ce point."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Je compte jusqu'à 5 avant de t'effacer complètement."
+      }
+    ],
+    "next_scene": "guardian_encounter"
+  }
+}

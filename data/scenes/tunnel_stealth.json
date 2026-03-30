@@ -1,0 +1,35 @@
+{
+  "id": "tunnel_stealth",
+  "name": "Contourner FRAGMENT_V3",
+  "description": "Vous vous glissez discrètement à travers le tunnel.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous vous glissez contre les parois du tunnel, réduisant votre empreinte numérique."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[STEALTH] Réduction de signature en cours... Discrétion maximale activée."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Hein? Où t'es allé? Reviens!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "FRAGMENT_V3 vous cherche quelques secondes avant de perdre votre trace."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[STEALTH] Contournement réussi. Vous êtes passé sans être détecté."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous émerger du Tunnel Noir. Devant vous brille le Marché Souterrain comme une oasis."
+      }
+    ],
+    "next_scene": "marche_souterrain_entry"
+  }
+}

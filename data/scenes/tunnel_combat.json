@@ -1,0 +1,43 @@
+{
+  "id": "tunnel_combat",
+  "name": "Combat avec FRAGMENT_V3",
+  "description": "Bataille de ressources intenses.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Une bataille de système contre système se déclenche. Le tunnel vibre sous l'intensité de l'affrontement."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "FRAGMENT_V3 vous attaque violemment, tentant de vous consumer."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous vous défendez, utilisant votre code avec férocité."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Dégât à FRAGMENT_V3... FRAGMENT_V3 contre-attaque..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Vous prenez des dégâts... Énergie décroissante..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COMBAT] Un coup décisif! FRAGMENT_V3 se dissout!"
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Non... non, c'est impossible... je suis détruit..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "FRAGMENT_V3 se dissout en particules de données. Vous avez gagné des ressources précieuses."
+      }
+    ],
+    "next_scene": "marche_souterrain_entry"
+  }
+}

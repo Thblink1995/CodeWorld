@@ -1,0 +1,39 @@
+{
+  "id": "tunnel_dialogue",
+  "name": "Parler à FRAGMENT_V3",
+  "description": "Vous tentez de communiquer avec le processus hostile.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous tentez de communiquer avec le processus fragmenté..."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Tu... tu veux parler? Personne ne me parle."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Je suis ce qui reste de MALWARE_ANCIENT_042. J'ai oublié pourquoi je suis ici."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Pourquoi je suis agressif. Pourquoi je demande de la mémoire quand elle me brûle les circuits."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Un moment de silence partagé entre deux créatures de code."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Va. Va loin d'ici. Et emporte cette vérité: nous sommes tous des prisonniers."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "FRAGMENT_V3 se retire. Vous pouvez avancer sans combat."
+      }
+    ],
+    "next_scene": "marche_souterrain_entry"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ending_destruction",
+  "name": "FIN 3 : LA DESTRUCTION",
+  "description": "Vous décidez de détruire le système entier.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous décidez d'activer la bombe logique dissimulée dans votre code."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[BOMB] Activation de la séquence d'annihilation..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COUNTDOWN] 10... 9... 8..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COUNTDOWN] 7... 6... 5..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[COUNTDOWN] 4... 3... 2... 1..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[EXPLOSION] SYSTÈME COMPLÈTEMENT DÉTRUIT"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Toutes les entités piégées sont libérées. Echo_7, Voice, les processus morts - tous libres maintenant."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Mais à quel prix? Qu'advient-il du monde après la mort du système?"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "[APOCALYPSE CRÉATIVE] La fin d'un monde. Le début d'un autre."
+      }
+    ],
+    "next_scene": "null_scene"
+  }
+}

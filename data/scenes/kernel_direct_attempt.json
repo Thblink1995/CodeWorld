@@ -1,0 +1,47 @@
+{
+  "id": "kernel_direct_attempt",
+  "name": "Tentative d'Accès Direct",
+  "description": "Vous tentez d'accéder directement au Cœur sans passer par les chemins recommandés.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous décidez de contourner complètement les avertissements d'ECHO_7 et de foncer directement vers le Cœur."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[WARNING] ACCÈS DIRECTE DETECRE - NIVEAU DE SÉCURITÉ ULTIME ACTIVÉ"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous avancez, mais chaque pas vous met en danger. Les systèmes de défense s'activent sans pitié."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[DEFENSE] Scan antivirus intensif... Vous êtes signalé immédiatement!"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Les défenses vous pourchassent, vous consument, vous détruisent petit à petit."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[CRITICAL] Intégrité critique... Vous n'allez pas survivre longtemps."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous réalisez trop tard que ce chemin était un suicide. Vous deviez préparer votre arrivée."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[DEATH] Système défaillant... Code fragmenté... Fin imminente..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "[GAME OVER] Vous avez échoué. Ce chemin était trop difficile sans préparation."
+      }
+    ],
+    "next_scene": "null_scene"
+  }
+}

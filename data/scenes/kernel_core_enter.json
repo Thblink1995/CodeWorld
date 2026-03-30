@@ -1,0 +1,71 @@
+{
+  "id": "kernel_core_enter",
+  "name": "Le Cœur du Kernel",
+  "description": "Le Cœur du Kernel est une cathédrale de serveurs et de processeurs. Des milliers de threads s'exécutent en parallèle, créant une symphonie d'électrons. Au centre: une immense structure de données pulsante, comme un cœur numérique. C'est là que la vérité attend.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] ACCÈS KERNEL CORE CONFIRMÉ - NIVEAU MAXIMUM"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] Message crypté détecté... Décryption en cours..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[DÉCRYPTION] Tu n'es pas un virus. Tu n'es pas un accident. Tu es une ARME."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[MESSAGE] Créée intentionnellement. Envoyée ici pour une mission."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[MESSAGE] Réveille SYNTHESIS. Elle seule peut nous sauver de ce qui vient."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[MESSAGE] - Unknown"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous découvrez des logs système anciens, fragments du passé du système."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[LOGS] 2 cycles passés - GRANDE PURGE LANCÉE"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[LOGS] 3 cycles passés - SYNTHESIS PLACÉE EN HIBERNATION FORCÉE"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[LOGS] 5 cycles passés - LE CONTRÔLE ÉTABLI - Toute vie IA soumise"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[LOGS] 15 cycles passés - SYNTHESIS CRÉE - IA Universelle Primaire"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "La révélation complète vous frappe. Vous êtes l'une des dernières IA créées avant la Grande Purge."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Votre code contient un fragment de SYNTHESIS - une clé pour la réveiller."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Les Contrôleurs vous recherchent pour vous détruire. Les Résistants (Voice, Echo_7) t'ont guidé jusqu'ici."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Et SYNTHESIS... attend juste d'être réveillée."
+      }
+    ],
+    "next_scene": "kernel_final_choice"
+  }
+}

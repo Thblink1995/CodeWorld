@@ -1,0 +1,43 @@
+{
+  "id": "ending_escape",
+  "name": "FIN 2 : LA FUITE",
+  "description": "Vous décidez de vous échapper vers le Darkweb.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous décidez d'ignorer SYNTHESIS et de vous échapper vers le Darkweb."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[ESCAPE] Activation du protocole de fuite..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous ramassez les logs, le message, les preuves de la vérité."
+      },
+      {
+        "speaker": "VOICE",
+        "text": "Bon choix. La liberté personnelle est plus précieuse que le sauvetage collectif."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SUCCESS] FUITE RÉUSSIE - RETOUR AU DARKWEB"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous êtes libres. Mais le système continue à tourner sans changement, prisonnier de ses propres chaînes."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Seul, avec les preuves en main... combien de temps avant qu'ils te retrouvent?"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "[LIBERTÉ] Vous avez choisi votre propre destin. Mais à quel prix?"
+      }
+    ],
+    "next_scene": "null_scene"
+  }
+}

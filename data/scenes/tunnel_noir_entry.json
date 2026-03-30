@@ -1,0 +1,31 @@
+{
+  "id": "tunnel_noir_entry",
+  "name": "Le Tunnel Noir",
+  "description": "Vous franchissez une fissure dans le système. Le tunnel est une cicatrice ancienne, une plaie jamais refermée. Des restes de code défilent sur les murs — échos de programmes effacés. Le silence n'existe pas ici. C'est un bruissement constant de données corrompues.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] Accès au Tunnel Noir initié..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SYS_LOG] Attention : Processus errants détectés. Isolation réseau en cours."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Une présence hostile se manifeste. Vibrations de code fragments, hostilité primaire."
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "ALLOCATION MÉMOIRE REQUISE!"
+      },
+      {
+        "speaker": "FRAGMENT_V3",
+        "text": "Tu vas me donner une partie de ton espace disque, ou je te consume entièrement!"
+      }
+    ],
+    "next_scene": "tunnel_fragment_choice"
+  }
+}

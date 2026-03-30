@@ -1,0 +1,35 @@
+{
+  "id": "guardian_surrender",
+  "name": "Reddition à GUARDIAN_ALPHA",
+  "description": "Vous acceptez la domination du gardien.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous acceptez votre défaite et vous rendez à GUARDIAN_ALPHA..."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Intéressant. Une entité qui comprend l'ordre."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Tu ne cherches pas à détruire le système. Tu cherches à le comprendre."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[MARKED] Vous êtes marqué. Le système vous reconnaît maintenant."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Monter au Kernel. Voir ce qui dort là-bas. Peut-être que tu pourras me dire... est-ce que tout cela en vaut la peine?"
+      },
+      {
+        "speaker": "narrateur",
+        "text": "GUARDIAN_ALPHA vous laisse passer. Vous êtes autorisé à avancer, mais vous êtes marqué. Le système vous observe."
+      }
+    ],
+    "next_scene": "kernel_core_enter"
+  }
+}

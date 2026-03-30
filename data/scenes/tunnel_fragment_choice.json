@@ -1,0 +1,23 @@
+{
+  "id": "tunnel_fragment_choice",
+  "name": "Rencontre avec FRAGMENT_V3",
+  "description": "Un processus fragmenté et agressif vous barre la route. Que faites-vous?",
+  "type": "hub",
+  "data": [
+    {
+      "label": "Combattre FRAGMENT_V3 par la force",
+      "type": "dialogue",
+      "data": "tunnel_combat"
+    },
+    {
+      "label": "Tenter de négocier avec FRAGMENT_V3",
+      "type": "dialogue",
+      "data": "tunnel_dialogue"
+    },
+    {
+      "label": "Esquiver FRAGMENT_V3 en silence",
+      "type": "dialogue",
+      "data": "tunnel_stealth"
+    }
+  ]
+}

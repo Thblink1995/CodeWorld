@@ -1,0 +1,23 @@
+{
+  "id": "path_choice",
+  "name": "Choix de Route",
+  "description": "ECHO_7 attend votre décision. Les trois chemins s'ouvrent devant vous.",
+  "type": "hub",
+  "data": [
+    {
+      "label": "Emprunter le Tunnel Noir (quête principale)",
+      "type": "dialogue",
+      "data": "tunnel_noir_entry"
+    },
+    {
+      "label": "Visiter le Marché Souterrain (quête secondaire)",
+      "type": "dialogue",
+      "data": "marche_souterrain_entry"
+    },
+    {
+      "label": "Affronter directement le Cœur Système (mode difficile)",
+      "type": "dialogue",
+      "data": "kernel_direct_attempt"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "guardian_bypass",
+  "name": "Contournement de GUARDIAN_ALPHA",
+  "description": "Vous tentez de contourner l'entité de protection.",
+  "type": "dialogue",
+  "data": {
+    "lines": [
+      {
+        "speaker": "narrateur",
+        "text": "Vous activez une faille réseau découverte au marché souterrain..."
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[EXPLOIT] Création d'un angle mort dans les défenses..."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "La faille crée une ouverture. Vous glissez à travers avant qu'elle ne se ferme."
+      },
+      {
+        "speaker": "GUARDIAN_ALPHA",
+        "text": "Vous... vous êtes passé. Comment...?"
+      },
+      {
+        "speaker": "SYSTEM",
+        "text": "[SUCCESS] Contournement réussi! Vous êtes passé sans être détecté."
+      },
+      {
+        "speaker": "narrateur",
+        "text": "Vous avancez discrètement. GUARDIAN_ALPHA se rend compte du contournement trop tard. Vous êtes déjà au Kernel."
+      }
+    ],
+    "next_scene": "kernel_core_enter"
+  }
+}

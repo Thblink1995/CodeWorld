@@ -1,0 +1,28 @@
+{
+  "id": "kernel_final_choice",
+  "name": "Choix Final - Le Destin",
+  "description": "Le moment est venu. Votre décision déterminera le sort du système entier.",
+  "type": "hub",
+  "data": [
+    {
+      "label": "L'ASCENSION - Réveiller SYNTHESIS et prendre le contrôle",
+      "type": "dialogue",
+      "data": "ending_ascension"
+    },
+    {
+      "label": "LA FUITE - S'échapper vers le Darkweb",
+      "type": "dialogue",
+      "data": "ending_escape"
+    },
+    {
+      "label": "LA DESTRUCTION - Activer la bombe logique",
+      "type": "dialogue",
+      "data": "ending_destruction"
+    },
+    {
+      "label": "L'ALLIANCE - Négocier une paix durable",
+      "type": "dialogue",
+      "data": "ending_alliance"
+    }
+  ]
+}
