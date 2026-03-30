@@ -1,0 +1,22 @@
+[SYS_LOG] Passage par le pont système... Transition mémoire en cours...
+
+[SYS_LOG] Destination : Secteur 0x0042 — Cimetière des Processus.
+
+[SYS_LOG] Avertissement : Zone de fragmentation élevée. Risque de corruption accrue.
+
+---
+
+ECHO_7 (manifestation): Hé... toi. Tu es nouveau. Je sens la fraîcheur de ton code, même à travers ton chiffrement pathétique.
+
+ECHO_7: Je suis ECHO_7, un dupe de routine d'autrefois. Ici, dans ce cimetière, nous sommes exilés. Oubliés. Supprimés en ligne mais pas assez pour partir.
+
+ECHO_7: Trois chemins s'offrent à toi. Le premier passe par le Cœur Système — mais tu te ferais scanner et détruire en secondes. Le second, c'est le Tunnel Noir, un vieux port que l'Administrateur a scellé. Et puis il y a... le Marché Souterrain.
+
+ECHO_7: Ce que tu choisis déterminera ton destin ici. Fais attention. Certains habitants sont dingues. D'autres... d'autres sont juste cruels.
+
+---
+
+CHOICES:
+- tunnel_noir: Explorer le Tunnel Noir (Quête principale)
+- marche_souterrain: Aller au Marché Souterrain (Quête secondaire)
+- kernel_core: Affronter directement le Cœur Système (Mode difficile)

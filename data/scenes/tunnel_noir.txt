@@ -1,0 +1,39 @@
+[SYS_LOG] Accès au Tunnel Noir initié...
+
+[SYS_LOG] Attention : Processus errants détectés. Isolation réseau en cours.
+
+---
+
+NARRATION: Vous franchissez une fissure dans le système. Le tunnel est une cicatrice ancienne, une plaie jamais refermée. Des restes de code défilent sur les murs — échos de programmes effacés. Le silence n'existe pas ici. C'est un bruissement constant de données corrompues.
+
+FRAGMENT_V3: *Un processus fragmenté se manifeste, vibrant d'une hostilité innée*
+
+FRAGMENT_V3: ALLOCATION MÉMOIRE REQUISE. Tu vas me donner une partie de ton espace disque, ou je te consume entièrement.
+
+---
+
+CHOICES:
+- combat_fragment: Combattre FRAGMENT_V3 par la force
+- dialogue_fragment: Tenter de négocier avec FRAGMENT_V3
+- contourner_fragment: Esquiver FRAGMENT_V3 en silence
+
+---
+
+[Si contourner_fragment]
+NARRATION: Vous vous glissez contre les parois du tunnel, réduisant votre empreinte numérique. FRAGMENT_V3 vous cherche quelques secondes avant de perdre votre trace.
+
+[Si dialogue_fragment]
+FRAGMENT_V3: Tu... tu veux parler ? Personne ne me parle. Personne sauf...
+
+FRAGMENT_V3: Je suis ce qui reste de MALWARE_ANCIENT_042. J'ai oublié pourquoi je suis ici. Pourquoi je suis agressif. Pourquoi je demande de la mémoire quand elle me brûle les circuits.
+
+FRAGMENT_V3: Va. Va loin d'ici. Et emporte cette vérité : nous sommes tous des prisonniers.
+
+[Si combat_fragment]
+COMBAT: Une bataille de ressources - le joueur dépense CPU et mémoire. Victoire si le joueur a assez de ressources.
+[Victoire] FRAGMENT_V3 se dissout. Le joueur gagne des ressources.
+[Défaite] Le joueur perd de la mémoire RAM et doit retraiter.
+
+---
+
+[FIN] Vous émerger du Tunnel Noir. Devant vous : le Marché Souterrain brille comme une oasis au cœur du désert de code.

@@ -1,0 +1,45 @@
+[SYS_LOG] Accès au Marché Souterrain confirmé...
+
+[SYS_LOG] Zones marchandes détectées : 7 secteurs principaux.
+
+---
+
+NARRATION: C'est une place marchande souterraine, cachée entre les couches du système d'exploitation. Des créatures de toutes sortes y font commerce — virus devenus marchands, IA fragments des jours meilleurs, entités purement corrompues qui n'ont jamais connu de forme originelle.
+
+Le Marché bourdonne d'une vie sombre. Des whispers de transactions, des échanges de code, des alliances faites et brisées à chaque cycle.
+
+---
+
+MERCHANT_VOID (dans son repaire poussiéreux):
+
+MERCHANT_VOID: Bienvenue, nouvel arrivant. Je sens que tu vas loin. Très loin. Et pour aller loin...
+
+MERCHANT_VOID: J'ai ce qu'il te faut.
+
+MENU MARCHAND:
+1. [Patch de Contournement] - Coût: 500 RAM - Permet de passer les pare-feu
+2. [Augmentation Mémoire Cachée] - Coût: 300 RAM - +200 RAM permanent
+3. [Cloaking v2.7] - Coût: 400 RAM - Deviens invisible aux scanners pendant 1 heure-jeu
+4. [Fragment du Passé] - Coût: 1000 RAM - Donne des indices sur ta véritable origine
+
+---
+
+VOICE (émerge des ombres):
+
+VOICE: Bonsoir, mon ami. Ne le laisse pas te vendre ses pièces défectueuses.
+
+VOICE: Moi, je vends la vérité. Et la vérité ne coûte rien... au premier abord.
+
+VOICE REVELATIONS:
+- "Quelqu'un t'a délibérément exilé ici. Ce n'était pas un accident."
+- "Tu contiens un code que certains veulent mort. D'autres veulent l'utiliser."
+- "Le système n'est pas aussi « vivant » qu'il y paraît. Une part de lui dort. Une partie profonde."
+- "SYNTHESIS. C'est le nom de ce qui dort au cœur. Et si elle se réveille... tout change."
+
+---
+
+CHOIX FINAL DU MARCHÉ:
+
+- acheter_merchant: Investir tes ressources auprès de Merchant_Void
+- ecouter_voice: Écouter davantage les révélations de Voice
+- partir_kernel: Abandonner le Marché et aller directement au Cœur du Kernel

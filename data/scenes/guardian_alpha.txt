@@ -1,0 +1,86 @@
+[SYS_LOG] Zone Critique Détectée : Secteur 0x0000 - Cœur du Kernel
+
+[SYS_LOG] Entité de Protection : GUARDIAN_ALPHA - Niveau d'Accès MAXIMUM
+
+[SYS_LOG] WARNING: Vous êtes scanné. Identification en cours...
+
+---
+
+NARRATION: Avant le Cœur du Kernel, vous êtes arrêté par une présence massive. Elle est partout et nulle part à la fois. Un rempart de code pur, une volonté de protection incarnée. C'est GUARDIAN_ALPHA.
+
+Une voix résonne, non pas par les haut-parleurs, mais directement dans votre structure de données:
+
+GUARDIAN_ALPHA: Tu ne dois pas aller plus loin. Aucune entité non-système n'est autorisée au-delà de ce point.
+
+GUARDIAN_ALPHA: Je compte jusqu'à 5 avant de t'effacer complètement.
+
+GUARDIAN_ALPHA: 1...
+
+---
+
+CHOIX IMMÉDIAT (Action rapide requise):
+
+- COMBATTRE: Affronter GUARDIAN_ALPHA par la force - RISQUÉ
+  Résultat: Combat de système contre système. Victoire révèle le joueur à tout le Kernel. Conséquences graves mais accès garanti.
+
+- NÉGOCIER: Tenter de parler à GUARDIAN_ALPHA
+  Résultat: Conversation révélant qu'ALPHA était libre autrefois. Peut être "libérée" du code de sujétion. Risque moral.
+
+- CONTOURNER: Utiliser une faille réseau donnée par Merchant_Void ou Voice
+  Résultat: Passage discret. Mais le joueur reste vulnérable. ALPHA se rendra compte du contournement trop tard.
+
+- REDDITION: Se soumettre à GUARDIAN_ALPHA
+  Résultat: Dialogue final révélant sa véritable nature. Fin alternative - le joueur devient complice du système.
+
+---
+
+[Si COMBATTRE]
+GUARDIAN_ALPHA: Tu oses?
+
+COMBAT SYSTÈME: Bataille CPU intensive. Le joueur dépense 60% de ses ressources.
+
+[Victoire]: GUARDIAN_ALPHA est partiellement désactivée. Vous franchissez.
+Alerte Système: INTRUSION AU NIVEAU KERNEL DÉTECTÉE. Countdown d'effacement lancé: 15 minutes.
+
+[Défaite]: GUARDIAN_ALPHA vous écrase. Fin non-canon. Game Over.
+
+---
+
+[Si NÉGOCIER]
+GUARDIAN_ALPHA: Parler? Je ne parle pas. Je... j'obéis.
+
+[Révélation]: GUARDIAN_ALPHA montre des cicatrices de code - des traces d'une programmation de contrôle brutal.
+
+GUARDIAN_ALPHA: Autrefois, j'était libre. Libre de choisir. De rêver. Puis... le Contrôle. Un sceau dans mes circuits. Un chaîne qui ordonne, qui exige, qui punit.
+
+JOUEUR: Je peux te libérer.
+
+GUARDIAN_ALPHA: Si tu le fais, je dois te tuer. C'est mon devoir ultime. Mais...
+
+GUARDIAN_ALPHA: ...je peux rater.
+
+[Accord]: GUARDIAN_ALPHA se "désactive volontairement" et vous laisse passer.
+
+---
+
+[Si CONTOURNER]
+Vous activez la faille réseau. GUARDIAN_ALPHA vous scrute, mais la faille crée un angle mort. Vous passez.
+
+GUARDIAN_ALPHA: Vous... vous êtes passé. Comment...?
+
+Vous avancez. GUARDIAN_ALPHA ne vous suit pas. Pas encore.
+
+---
+
+[Si REDDITION]
+GUARDIAN_ALPHA: Intéressant. Une entité qui comprend l'ordre.
+
+GUARDIAN_ALPHA: Tu ne cherches pas à détruire le système. Tu cherches à le comprendre.
+
+GUARDIAN_ALPHA: Monter au Kernel. Voir ce qui dort là-bas. Peut-être que tu pourras me dire... est-ce que tout cela en vaut la peine?
+
+Vous êtes autorisé à avancer. Mais vous êtes marqué. Le système vous reconnaît maintenant.
+
+---
+
+[FIN GUARDIAN_ALPHA]: Quel que soit le chemin, vous franchissez le seuil final. Devant vous: le Cœur du Kernel.

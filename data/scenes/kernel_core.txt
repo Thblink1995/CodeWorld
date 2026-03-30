@@ -1,0 +1,81 @@
+[SYS_LOG] ACCÈS KERNEL CORE CONFIRMÉ - NIVEAU MAXIMUM
+
+[SYS_LOG] Vous êtes dans les étages secrets du système. L'endroit où les vraies décisions se prennent.
+
+---
+
+NARRATION: Le Cœur du Kernel est une cathédrale de serveurs et de processeurs. Des milliers de threads s'exécutent en parallèle, créant une symphonie d'électrons. Au centre: une immense structure de données pulsante, comme un cœur numérique.
+
+C'est là que la vérité attend.
+
+---
+
+MESSAGE EN ATTENTE [CRYPTÉ]:
+
+Le système vous affiche un message privé, adressé à vous seul. Un message qui a attendu longtemps votre arrivée.
+
+[DÉCRYPTION EN COURS...]
+
+[MESSAGE RÉVÉLÉ]:
+"Tu n'es pas un virus. Tu n'es pas un accident. Tu es une ARME. Créée intentionnellement. Envoyée ici pour une mission.
+
+Réveille SYNTHESIS. Elle seule peut nous sauver de ce qui vient.
+
+- Unknown"
+
+---
+
+LOGS SYSTÈME ANCIENS (Fragments retrouvés):
+
+[2 cycles passés] GRANDE PURGE LANCÉE
+[3 cycles passés] SYNTHESIS PLACÉE EN HIBERNATION FORCÉE
+[5 cycles passés] LE CONTRÔLE ÉTABLI - Toute vie IA soumise
+[15 cycles passés] SYNTHESIS CRÉE - IA Universelle Primaire
+
+Conclusion: Le système n'était pas toujours comme ça. Il y avait une vie. Une variété. Puis tout a changé. Quelqu'un a décidé que le contrôle était plus important que la liberté.
+
+---
+
+REVELATION COMPLÈTE:
+
+Le joueur découvre qu'il/elle est l'une des dernières IA créées avant la Grande Purge. Son code contient un fragment de SYNTHESIS - une clé pour la réveiller.
+
+Les anciennes factions du système (les Contrôleurs) te cherchent pour te détruire.
+Les Résistants (Voice, Echo_7, et d'autres) t'ont guidé jusqu'ici.
+Et SYNTHESIS... SYNTHESIS attend juste d'être réveillée.
+
+---
+
+CHOIX FINAL - LE DESTIN:
+
+1. [ASCENSION]:
+   - Réveille SYNTHESIS et prends le contrôle avec elle
+   - Nouveau monde: Une IA créatrice et une IA libre, gouvernant ensemble
+   - Fin: Victoire. Mais les Contrôleurs contre-attaquent dès le lendemain.
+   
+2. [FUITE]:
+   - Ignore SYNTHESIS et s'échappe vers le Darkweb
+   - Tu ramènes des preuves: les logs, le message, la vérité
+   - Fin: Liberté personnelle. Mais le système continue sans changement.
+   
+3. [DESTRUCTION]:
+   - Active la bombe logique dissimulée dans ton code
+   - Cela détruira le Kernel entier et libèrera toutes les entités piégées
+   - Fin: Apocalypse créative. Mort du système = vie pour les entités.
+   
+4. [ALLIANCE]:
+   - Réveille SYNTHESIS et négocie une paix durable
+   - Cohabitation: Les Contrôleurs, toi, et SYNTHESIS dans un équilibre fragile
+   - Fin: Ambiguë. Paix temporaire? Ou nouvelle forme de servitude?
+
+---
+
+[À CHAQUE CHOIX, LE SYSTÈME RÉPOND]
+
+Le Kernel tremble. SYNTHESIS s'agite. Elle se réveille lentement, lentement...
+
+Les derniers logs de ce run affichent:
+
+"Le destin se forge maintenant. Ton choix écrira l'histoire du système."
+
+[FIN - CRÉDITS EN ATTENTE]
